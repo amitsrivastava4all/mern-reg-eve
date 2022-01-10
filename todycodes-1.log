@@ -1,0 +1,275 @@
+var a;
+undefined
+typeof a;
+'undefined'
+a = 100;
+100
+typeof a;
+'number'
+a = "Amit";
+'Amit'
+typeof a;
+'string'
+a = true;
+true
+typeof a;
+'boolean'
+a  = [10,20];
+(2) [10, 20]
+typeof a;
+'object'
+a=100;
+100
+typeof a;
+'number'
+a=1;
+1
+typeof a;
+'number'
+a=1000000000;
+1000000000
+typeof a;
+'number'
+a=1000.200;
+1000.2
+typeof a;
+'number'
+a=1000/0;
+Infinity
+typeof a;
+'number'
+a=100/"one";
+NaN
+isFinite(a)
+false
+a;
+NaN
+a= 1000/0;
+Infinity
+a;
+Infinity
+isFinite(a)
+false
+isFinite(a)?a:0;
+0
+a;
+Infinity
+a=100;
+100
+isFinite(a)?a:0;
+100
+a=100/"one";
+NaN
+isNaN(a);
+true
+isNaN(a)?0:a;
+0
+a=100+"one";
+'100one'
+typeof a;
+'string'
+100 + undefined
+NaN
+100 + true;
+101
+"Amit" + undefined
+'Amitundefined'
+var x = "Amit";
+undefined
+typeof x;
+'string'
+x;
+'Amit'
+x = 'Amit';
+'Amit'
+typeof x;
+'string'
+x = `dghfkjgdfkgj
+gjfdghfdkj
+gjdfhkjg
+gdfhgkjf
+gjfhf`;
+'dghfkjgdfkgj\ngjfdghfdkj\ngjdfhkjg\ngdfhgkjf\ngjfhf'
+x;
+'dghfkjgdfkgj\ngjfdghfdkj\ngjdfhkjg\ngdfhgkjf\ngjfhf'
+console.log(x);
+VM1187:1 dghfkjgdfkgj
+gjfdghfdkj
+gjdfhkjg
+gdfhgkjf
+gjfhf
+undefined
+var age = 21;
+undefined
+"Age is "+age;
+'Age is 21'
+var name = "Tom";
+undefined
+"Name is "+name+" Age is "+age;
+'Name is Tom Age is 21'
+`Name is ${name} Age is ${age}`;
+'Name is Tom Age is 21'
+var a = Number.MAX_SAFE_INTEGER;
+undefined
+a;
+9007199254740991
+++a;
+9007199254740992
+++a;
+9007199254740992
+++a;
+9007199254740992
+++a;
+9007199254740992
+typeof a;
+'number'
+var q  = 9007199254740992n;
+undefined
+q;
+9007199254740992n
+typeof q;
+'bigint'
+++q;
+9007199254740993n
+++q;
+9007199254740994n
+++q;
+9007199254740995n
+++q;
+9007199254740996n
+q + 54534;
+VM1708:1 Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+    at <anonymous>:1:3
+(anonymous) @ VM1708:1
+q + 54534n;
+9007199254795530n
+var w = BigInt("345345343454657687979856764546456");
+undefined
+w;
+345345343454657687979856764546456n
+typeof w;
+'bigint'
+var t = [10, 20,30,40,50];
+undefined
+t;
+(5) [10, 20, 30, 40, 50]
+typeof t;
+'object'
+var v = t;
+undefined
+v == t;
+true
+v[0];
+10
+t[0]
+10
+t;
+(5) [10, 20, 30, 40, 50]
+v[0] = 1000;
+1000
+t;
+(5) [1000, 20, 30, 40, 50]
+v;
+(5) [1000, 20, 30, 40, 50]
+typeof v;
+'object'
+typeof t;
+'object'
+v instanceof Array;
+true
+t instanceof Array;
+true
+typeof Array;
+'function'
+var a =100;
+undefined
+var b = a;
+undefined
+a;
+100
+b;
+100
+a==b
+true
+a===b;
+true
+var c = "100";
+undefined
+typeof c;
+'string'
+typeof a;
+'number'
+a == c;
+true
+a===c
+false
+a===b
+true
+++a;
+101
+b;
+100
+a;
+101
+var price = 9000;
+undefined
+price * 0.18
+1620
+price.toLocaleString('en-US')
+'9,000'
+price.toLocaleString('hi-IN')
+'9,000'
+price.toLocaleString('fr-FR')
+'9 000'
+price;
+9000
+var formattedPrice = price.toLocaleString('fr-FR')
+undefined
+formattedPrice;
+'9 000'
+price;
+9000
+typeof formattedPrice;
+'string'
+typeof price;
+'number'
+100 == "100";
+true
+var obj = {};
+undefined
+typeof obj;
+'object'
+obj instanceof Array;
+false
+obj instanceof Object;
+true
+typeof Object;
+'function'
+var arr = [10,20,30];
+undefined
+typeof arr;
+'object'
+arr instanceof Array;
+true
+arr instanceof Object;
+true
+obj.id = 1001;
+1001
+obj;
+{id: 1001}
+obj.name = 'Amit';
+'Amit'
+obj;
+{id: 1001, name: 'Amit'}
+delete obj.id;
+true
+obj;
+{name: 'Amit'}
+var t = {id:101,name:'Amit'};
+undefined
+t;
+{id: 101, name: 'Amit'}
+typeof t;
+'object'
+t instanceof Object;
+true
