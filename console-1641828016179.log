@@ -1,0 +1,50 @@
+var arr = [10, 20,30,40];
+undefined
+typeof arr;
+'object'
+arr instanceof Array;
+true
+arr = null;
+null
+typeof arr;
+'object'
+typeof null;
+'object'
+arr instanceof Array;
+false
+typeof (null);
+'object'
+typeof null;
+'object'
+typeof (10 + 20 + "Amit")
+'string'
+typeof 10 + 20 + "Amit"
+'number20Amit'
+typeof ((((10 + 20 + "Amit"))))
+'string'
+null == undefined
+true
+typeof null;
+'object'
+typeof undefined
+'undefined'
+null === undefined;
+false
+10 + null;
+10
+10 + undefined;
+NaN
+var a = [10,20,30];
+undefined
+typeof a;
+'object'
+a = null;
+null
+typeof a;
+'object'
+a;
+null
+a = undefined;
+undefined
+typeof a;
+'undefined'
