@@ -1,0 +1,9 @@
+console.log(10,20,30,40,50,60,70);
+VM145:1 10 20 30 40 50 60 70
+undefined
+console.log("Hello");
+VM195:1 Hello
+undefined
+console.log("Hello",10,"Ok", "Bye ", true, false);
+VM277:1 Hello 10 Ok Bye  true false
+undefined

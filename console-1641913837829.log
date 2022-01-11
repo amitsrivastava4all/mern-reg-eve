@@ -1,0 +1,4 @@
+null == undefined;
+true
+10 =="10"
+true

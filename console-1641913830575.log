@@ -1,0 +1,210 @@
+var a = 100;
+undefined
+typeof a;
+'number'
+var b = [10,20,30,40];
+undefined
+typeof b;
+'object'
+typeof b.sort;
+'function'
+a.toString
+ƒ toString() { [native code] }
+typeof a.toString
+'function'
+var b = "Hello";
+undefined
+b.toUpperCase();
+'HELLO'
+b;
+'Hello'
+typeof b;
+'string'
+var w = new String("Hello");
+undefined
+typeof w;
+'object'
+w;
+String {'Hello'}0: "H"1: "e"2: "l"3: "l"4: "o"length: 5[[Prototype]]: Stringanchor: ƒ anchor()at: ƒ at()big: ƒ big()blink: ƒ blink()bold: ƒ bold()charAt: ƒ charAt()charCodeAt: ƒ charCodeAt()codePointAt: ƒ codePointAt()concat: ƒ concat()constructor: ƒ String()endsWith: ƒ endsWith()fixed: ƒ fixed()fontcolor: ƒ fontcolor()fontsize: ƒ fontsize()includes: ƒ includes()indexOf: ƒ indexOf()italics: ƒ italics()lastIndexOf: ƒ lastIndexOf()length: 0link: ƒ link()localeCompare: ƒ localeCompare()match: ƒ match()matchAll: ƒ matchAll()normalize: ƒ normalize()padEnd: ƒ padEnd()padStart: ƒ padStart()repeat: ƒ repeat()replace: ƒ replace()replaceAll: ƒ replaceAll()search: ƒ search()slice: ƒ slice()small: ƒ small()split: ƒ split()startsWith: ƒ startsWith()strike: ƒ strike()sub: ƒ sub()substr: ƒ substr()substring: ƒ substring()sup: ƒ sup()toLocaleLowerCase: ƒ toLocaleLowerCase()toLocaleUpperCase: ƒ toLocaleUpperCase()toLowerCase: ƒ toLowerCase()toString: ƒ toString()toUpperCase: ƒ toUpperCase()trim: ƒ trim()trimEnd: ƒ trimEnd()trimLeft: ƒ trimStart()trimRight: ƒ trimEnd()trimStart: ƒ trimStart()valueOf: ƒ valueOf()Symbol(Symbol.iterator): ƒ [Symbol.iterator]()[[Prototype]]: Object[[PrimitiveValue]]: ""[[PrimitiveValue]]: "Hello"
+b'
+VM500:1 Uncaught SyntaxError: Invalid or unexpected token
+b;
+'Hello'
+typeof String;
+'function'
+String.prototype.toUpperCase
+ƒ toUpperCase() { [native code] }
+var z = 100;
+undefined
+typeof z;
+'number'
+++z;
+101
+var z1 = new Number(1000);
+undefined
+typeof z1;
+'object'
+typeof Number;
+'function'
+BigInt(10);
+10n
+z;
+101
+var k; // variable declare or define
+undefined
+k;
+undefined
+typeof k;
+'undefined'
+var g = 100;
+undefined
+typeof g;
+'number'
+g;
+100
+gg;
+VM1026:1 Uncaught ReferenceError: gg is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1026:1
+var h1;
+undefined
+typeof h1;
+'undefined'
+h1;
+undefined
+var h2 = 1000;
+undefined
+typeof h2;
+'number'
+h2;
+1000
+h3;
+VM1157:1 Uncaught ReferenceError: h3 is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1157:1
+typeof h3;
+'undefined'
+h1;
+undefined
+typeof h1;
+'undefined'
+h1;
+undefined
+h3;
+VM1239:1 Uncaught ReferenceError: h3 is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM1239:1
+try{
+    h3;
+}
+catch(e){
+    console.log('this variable is not declared ',e);
+}
+VM1367:5 this variable is not declared  ReferenceError: h3 is not defined
+    at <anonymous>:2:5
+undefined
+try{
+    h3;
+}
+catch(e){
+    if(e.name=='ReferenceError'){
+    console.log('this variable is not declared ',e);
+    }
+}
+VM1404:6 this variable is not declared  ReferenceError: h3 is not defined
+    at <anonymous>:2:5
+undefined
+try{
+    h3;
+}
+catch(e){
+    if(e.name=='ReferenceError'){
+    console.log('this variable is not declared ');
+    }
+}
+VM1414:6 this variable is not declared 
+undefined
+var arr = [10, 20,30,40];
+undefined
+arr = null;
+null
+arr;
+null
+typeof arr;
+'object'
+var v = 100 - "one";
+undefined
+v;
+NaN
+typeof v;
+'number'
+null == NaN
+false
+NaN == null;
+false
+10 + null;
+10
+NaN == NaN;
+false
+v;
+NaN
+isNaN(v);
+true
+window;
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+window == this;
+true
+window.isNaN(v);
+true
+v;
+NaN
+v = "Amit";
+'Amit'
+isNaN(v);
+true
+isNaN(10);
+false
+isNaN(true);
+false
+isNaN(null);
+false
+Number.isNaN == window.isNaN;
+false
+Number.isNaN(NaN);
+true
+Number.isNaN("Amit");
+false
+10 + "10"
+'1010'
+10 + parseInt("10");
+20
+10 + parseFloat("10.20");
+20.2
+10 + Number("10");
+20
+10 + Number("10.20");
+20.2
+10 - "10"
+0
+"Amit " + "Srivastava"
+'Amit Srivastava'
+"Amit" - "Srivastava"
+NaN
+10 * "20"
+200
+"10"/"2"
+5
+parseInt("100");
+100
+parseInt("one")
+NaN
+var arr = ["10",20,30,40];
+undefined
+parseInt(arr);
+10
+parseInt(arr[0]);
+10
+parseInt(10);
+10
+parseInt(10,8)
+8
