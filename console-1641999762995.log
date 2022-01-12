@@ -1,0 +1,50 @@
+function add(){ // Shift + Enter 
+
+} // Enter to Execute the Code
+undefined
+typeof add;
+'function'
+var r  = add; // i assign the reference of a function to r variable // add() this is a call of function
+undefined
+typeof r;
+'function'
+add();
+undefined
+r();
+undefined
+function add(){ // Shift + Enter 
+ console.log("I am Add Function ");
+} // Enter to Execute the Code
+undefined
+add();
+VM429:2 I am Add Function 
+undefined
+dd(10,20,30,40,50);
+VM505:1 Uncaught ReferenceError: dd is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM505:1
+add(10,20,30,40,50);
+VM429:2 I am Add Function 
+undefined
+add(10,"20",[90,100],40,50);
+VM429:2 I am Add Function 
+undefined
+add.arguments
+null
+function add(){ // Shift + Enter 
+ console.log("I am Add Function ", arguments.length);
+} // Enter to Execute the Code
+undefined
+add(10,"20",[90,100],40,50);
+VM671:2 I am Add Function  5
+undefined
+add(10,20,30,40,50,60,70);
+VM671:2 I am Add Function  7
+undefined
+add;
+ƒ add(){ // Shift + Enter 
+ console.log("I am Add Function ", arguments.length);
+}
+console.dir(add);
+VM782:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM671:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]0: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined

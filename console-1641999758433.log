@@ -1,0 +1,22 @@
+parseInt("one")?0:10
+10
+isNaN(parseInt("one"))?0:10
+0
+isNaN(parseInt("100"))?0:10
+10
+function giveMeNumber(){
+return 1;
+}
+undefined
+parseInt(giveMeNumber);
+NaN
+parseInt(giveMeNumber());
+1
+giveMeNumber;
+ƒ giveMeNumber(){
+return 1;
+}
+giveMeNumber();
+1
+typeof giveMeNumber;
+'function'

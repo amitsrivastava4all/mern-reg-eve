@@ -1,0 +1,63 @@
+isNaN(10-"ten");
+true
+window.isNaN(NaN)
+true
+window.isNaN("Amit")
+true
+window.isNaN(null)
+false
+window.isNaN(undefined);
+true
+window.isNaN(true);
+false
+Number.isNaN(10-"ten");
+true
+Number.isNaN("gfgfdg");
+false
+Number.isNaN(undefined);
+false
+var arr = [10, 20,30,40];
+undefined
+var x= 100;
+undefined
+x = 100000;
+100000
+console.log("Amount is ",x);
+VM591:1 Amount is  100000
+undefined
+x.toLocaleString('hi-IN');
+'1,00,000'
+x.toLocaleString('fr-FR');
+'100 000'
+x.toLocaleString('en-US');
+'100,000'
+x;
+100000
+var q = new Number(10000);
+undefined
+typeof q;
+'object'
+typeof x;
+'number'
+++q;
+10001
+q;
+10001
+typeof q;
+'number'
+q;
+10001
+var d = q.toString();
+undefined
+d;
+'10001'
+q;
+10001
+typeof d;
+'string'
+typeof q;
+'number'
+arr;
+(4) [10, 20, 30, 40]
+typeof arr;
+'object'
