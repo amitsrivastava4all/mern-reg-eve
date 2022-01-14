@@ -1,0 +1,43 @@
+function add(){
+'use strict'
+    //console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    sum = 0; // Accidental Global
+    
+    //console.log(arguments instanceof Array, typeof arguments);
+    for(var i = 0; i<arguments.length; i++){
+    if(arguments[i] instanceof Array){
+        for(var j = 0; j<arguments[i].length; j++){
+         if(typeof arguments[i][j] === 'function'){
+        arguments[i][j] = arguments[i][j](); // call function 
+}
+sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+            
+}
+        
+}
+    else {
+if(typeof arguments[i] === 'function'){
+        arguments[i] = arguments[i](); // call function 
+} 
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+//sum = sum + arguments[i];
+}
+    }
+console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    return sum;
+}
+undefined
+add(1,"2","three",[4,"5",giveMeNumber],giveMeNumber);
+VM59:1 Uncaught ReferenceError: giveMeNumber is not defined
+    at <anonymous>:1:26
+(anonymous) @ VM59:1
+function giveMeNumber(){
+return "1";
+}
+undefined
+add(1,"2","three",[4,"5",giveMeNumber],giveMeNumber);
+VM47:4 Uncaught ReferenceError: sum is not defined
+    at add (<anonymous>:4:9)
+    at <anonymous>:1:1
+add @ VM47:4
+(anonymous) @ VM106:1

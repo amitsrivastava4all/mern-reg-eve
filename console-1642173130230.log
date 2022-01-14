@@ -1,0 +1,10 @@
+function show(){
+console.dir(arguments);
+}
+undefined
+show();
+VM238:2 Arguments(0)callee: ƒ show()length: 0Symbol(Symbol.iterator): ƒ values()[[Prototype]]: Object
+undefined
+show(10,20,30,40);
+VM238:2 Arguments(4)0: 101: 202: 303: 40callee: ƒ show()length: 4Symbol(Symbol.iterator): ƒ values()[[Prototype]]: Object
+undefined

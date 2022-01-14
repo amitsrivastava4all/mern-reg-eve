@@ -1,0 +1,20 @@
+var z ;
+undefined
+z;
+undefined
+typeof z;
+'undefined'
+function test(){
+if(10>2){
+// TDZ
+console.log(m);
+let m = 1000;
+}
+}
+undefined
+test();
+VM191:4 Uncaught ReferenceError: Cannot access 'm' before initialization
+    at test (<anonymous>:4:13)
+    at <anonymous>:1:1
+test @ VM191:4
+(anonymous) @ VM211:1

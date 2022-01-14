@@ -1,0 +1,102 @@
+function add(){
+    //console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    var sum = 0; // Accidental Global
+    
+    //console.log(arguments instanceof Array, typeof arguments);
+    for(let i = 0; i<arguments.length; i++){
+    if(arguments[i] instanceof Array){
+        for(let j = 0; j<arguments[i].length; j++){
+         if(typeof arguments[i][j] === 'function'){
+        arguments[i][j] = arguments[i][j](); // call function 
+}
+sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+            
+}
+        
+}
+    else {
+if(typeof arguments[i] === 'function'){
+        arguments[i] = arguments[i](); // call function 
+} 
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+//sum = sum + arguments[i];
+}
+    }
+console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    return sum;
+}
+undefined
+function giveMeNumber(){
+return "1";
+}
+undefined
+add(1,"2","three",[4,"5",giveMeNumber],giveMeNumber);
+VM17:25 Uncaught ReferenceError: i is not defined
+    at add (<anonymous>:25:36)
+    at <anonymous>:1:1
+add @ VM17:25
+(anonymous) @ VM31:1
+function add(){
+    console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    var sum = 0; // Accidental Global
+    
+    //console.log(arguments instanceof Array, typeof arguments);
+    for(let i = 0; i<arguments.length; i++){
+    if(arguments[i] instanceof Array){
+        for(let j = 0; j<arguments[i].length; j++){
+         if(typeof arguments[i][j] === 'function'){
+        arguments[i][j] = arguments[i][j](); // call function 
+}
+sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+            
+}
+        
+}
+    else {
+if(typeof arguments[i] === 'function'){
+        arguments[i] = arguments[i](); // call function 
+} 
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+//sum = sum + arguments[i];
+}
+    }
+//console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    return sum;
+}
+undefined
+add(1,"2","three",[4,"5",giveMeNumber],giveMeNumber);
+VM42:2 Uncaught ReferenceError: i is not defined
+    at add (<anonymous>:2:40)
+    at <anonymous>:1:1
+add @ VM42:2
+(anonymous) @ VM48:1
+function add(){
+    //console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    var sum = 0; // Accidental Global
+    
+    //console.log(arguments instanceof Array, typeof arguments);
+    for(let i = 0; i<arguments.length; i++){
+    if(arguments[i] instanceof Array){
+        for(let j = 0; j<arguments[i].length; j++){
+         if(typeof arguments[i][j] === 'function'){
+        arguments[i][j] = arguments[i][j](); // call function 
+}
+sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+            
+}
+        
+}
+    else {
+if(typeof arguments[i] === 'function'){
+        arguments[i] = arguments[i](); // call function 
+} 
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+//sum = sum + arguments[i];
+}
+    }
+//console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    return sum;
+}
+undefined
+add(1,"2","three",[4,"5",giveMeNumber],giveMeNumber);
+14

@@ -1,0 +1,158 @@
+function add(){
+    var sum = 0;
+    //console.log(arguments instanceof Array, typeof arguments);
+    for(var i = 0; i<arguments.length; i++){
+    if(typeof arguments[i] === 'function'){
+        arguments[i] = arguments[i](); // call function 
+}
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+//sum = sum + arguments[i];
+}
+    return sum;
+}
+undefined
+var arr = [10, "20",30,40];
+undefined
+function giveMeNumber(){
+return "1";
+}
+undefined
+var arr = [10, "20",30,giveMeNumber];
+undefined
+function add(){
+    var sum = 0;
+    //console.log(arguments instanceof Array, typeof arguments);
+    for(var i = 0; i<arguments.length; i++){
+    if(arguments[i] instanceof Array){
+        for(var j = 0; j<arguments[i].length; j++){
+         if(typeof arguments[i][j] === 'function'){
+        arguments[i][j] = arguments[i][j](); // call function 
+}
+sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+            
+}
+        
+}
+    else if(typeof arguments[i] === 'function'){
+        arguments[i] = arguments[i](); // call function 
+} else
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+//sum = sum + arguments[i];
+}
+    return sum;
+}
+undefined
+add(1,"2","three",[4,"5",giveMeNumber],giveMeNumber);
+13
+function add(){
+    var sum = 0;
+    //console.log(arguments instanceof Array, typeof arguments);
+    for(var i = 0; i<arguments.length; i++){
+    if(arguments[i] instanceof Array){
+        for(var j = 0; j<arguments[i].length; j++){
+         if(typeof arguments[i][j] === 'function'){
+        arguments[i][j] = arguments[i][j](); // call function 
+}
+sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+            
+}
+        
+}
+    else {
+if(typeof arguments[i] === 'function'){
+        arguments[i] = arguments[i](); // call function 
+} 
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+//sum = sum + arguments[i];
+}
+    }
+    return sum;
+}
+undefined
+add(1,"2","three",[4,"5",giveMeNumber],giveMeNumber);
+14
+function add(){
+    console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    var sum = 0;
+    
+    //console.log(arguments instanceof Array, typeof arguments);
+    for(var i = 0; i<arguments.length; i++){
+    if(arguments[i] instanceof Array){
+        for(var j = 0; j<arguments[i].length; j++){
+         if(typeof arguments[i][j] === 'function'){
+        arguments[i][j] = arguments[i][j](); // call function 
+}
+sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+            
+}
+        
+}
+    else {
+if(typeof arguments[i] === 'function'){
+        arguments[i] = arguments[i](); // call function 
+} 
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+//sum = sum + arguments[i];
+}
+    }
+console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    return sum;
+}
+undefined
+add(1,"2","three",[4,"5",giveMeNumber],giveMeNumber);
+VM708:2 Sum is  undefined I is  undefined And J is  undefined
+VM708:25 Sum is  14 I is  5 And J is  3
+14
+sum;
+VM729:1 Uncaught ReferenceError: sum is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM729:1
+i;
+VM740:1 Uncaught ReferenceError: i is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM740:1
+j;
+VM751:1 Uncaught ReferenceError: j is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM751:1
+var b = 200;
+undefined
+window.b;
+200
+function add(){
+    //console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    sum = 0; // Accidental Global
+    
+    //console.log(arguments instanceof Array, typeof arguments);
+    for(var i = 0; i<arguments.length; i++){
+    if(arguments[i] instanceof Array){
+        for(var j = 0; j<arguments[i].length; j++){
+         if(typeof arguments[i][j] === 'function'){
+        arguments[i][j] = arguments[i][j](); // call function 
+}
+sum += isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]);
+            
+}
+        
+}
+    else {
+if(typeof arguments[i] === 'function'){
+        arguments[i] = arguments[i](); // call function 
+} 
+    sum += isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+//sum = sum + arguments[i];
+}
+    }
+console.log('Sum is ',sum, 'I is ',i, 'And J is ',j);
+    return sum;
+}
+undefined
+add(1,"2","three",[4,"5",giveMeNumber],giveMeNumber);
+VM851:25 Sum is  14 I is  5 And J is  3
+14
+sum;
+14
+sum  = "Hello";
+'Hello'
+sum;
+'Hello'
