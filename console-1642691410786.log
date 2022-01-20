@@ -1,0 +1,102 @@
+const allowances = {
+  basicSalary: 0,
+  hra: function hra() {
+    return this.basicSalary * 0.5;
+  },
+  da: function da() {
+    return this.basicSalary * 0.2;
+  },
+  ta: function ta() {
+    return this.basicSalary * 0.3;
+  },
+  ma: function ma() {
+    return this.basicSalary * 0.15;
+  },
+  pf: function pf() {
+    return this.basicSalary * 0.05;
+  },
+  gs: function gs() {
+    return this.basicSalary + this.hra() + this.da() + this.ma();
+  },
+  ns: function ns() {
+    return this.gs() - this.pf();
+  },
+};
+
+undefined
+typeof allowances;
+'object'
+for(let key in allowances){
+console.log(key);
+}
+VM197:2 basicSalary
+VM197:2 hra
+VM197:2 da
+VM197:2 ta
+VM197:2 ma
+VM197:2 pf
+VM197:2 gs
+VM197:2 ns
+undefined
+for(let key in allowances){
+console.log(key, allowances[key]);
+}
+VM234:2 basicSalary 0
+VM234:2 hra ƒ hra() {
+    return this.basicSalary * 0.5;
+  }
+VM234:2 da ƒ da() {
+    return this.basicSalary * 0.2;
+  }
+VM234:2 ta ƒ ta() {
+    return this.basicSalary * 0.3;
+  }
+VM234:2 ma ƒ ma() {
+    return this.basicSalary * 0.15;
+  }
+VM234:2 pf ƒ pf() {
+    return this.basicSalary * 0.05;
+  }
+VM234:2 gs ƒ gs() {
+    return this.basicSalary + this.hra() + this.da() + this.ma();
+  }
+VM234:2 ns ƒ ns() {
+    return this.gs() - this.pf();
+  }
+undefined
+for(let key in allowances){
+console.log(key, allowances[key]());
+}
+VM242:2 Uncaught TypeError: allowances[key] is not a function
+    at <anonymous>:2:33
+(anonymous) @ VM242:2
+for(let key in allowances){
+if(typeof allowances[key] ==='function'){
+console.log(key, allowances[key]());
+}
+}
+VM353:3 hra 0
+VM353:3 da 0
+VM353:3 ta 0
+VM353:3 ma 0
+VM353:3 pf 0
+VM353:3 gs 0
+VM353:3 ns 0
+undefined
+allowances.basicSalary
+0
+allowances.basicSalary = 10000;
+10000
+for(let key in allowances){
+if(typeof allowances[key] ==='function'){
+console.log(key, allowances[key]());
+}
+}
+VM438:3 hra 5000
+VM438:3 da 2000
+VM438:3 ta 3000
+VM438:3 ma 1500
+VM438:3 pf 500
+VM438:3 gs 18500
+VM438:3 ns 18000
+undefined

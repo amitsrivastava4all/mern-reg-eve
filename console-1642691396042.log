@@ -1,0 +1,14 @@
+var obj = {id:1001, name:'Amit'};
+undefined
+obj.id;
+1001
+obj.name;
+'Amit'
+obj["id"]
+1001
+var x = "id";
+undefined
+obj[x];
+1001
+obj.x;
+undefined

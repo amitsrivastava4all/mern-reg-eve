@@ -1,0 +1,6 @@
+var arr = [{id:1001,name:'Amit'}, {id:1002, name:'ram'}];
+undefined
+arr[0];
+{id: 1001, name: 'Amit'}
+arr[0]["id"]
+1001

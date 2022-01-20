@@ -1,0 +1,54 @@
+const allowances = {
+  basicSalary: 0,
+  hra: function hra() {
+    return this.basicSalary * 0.5;
+  },
+  da: function da() {
+    return this.basicSalary * 0.2;
+  },
+  ta: function ta() {
+    return this.basicSalary * 0.3;
+  },
+  ma: function ma() {
+    return this.basicSalary * 0.15;
+  },
+  pf: function pf() {
+    return this.basicSalary * 0.05;
+  },
+  gs: function gs() {
+    return this.basicSalary + this.hra() + this.da() + this.ma();
+  },
+  ns: function ns() {
+    return this.gs() - this.pf();
+  },
+};
+
+undefined
+allowances.basicSalary = 10000;
+10000
+allowances["basicSalary"] = 20000;
+20000
+allowances;
+{basicSalary: 20000, hra: ƒ, da: ƒ, ta: ƒ, ma: ƒ, …}
+var dhoni = {name : 'MS Dhoni', 50:72, 100: 30 , sur name:'Dhoni'};
+VM252:1 Uncaught SyntaxError: Unexpected identifier
+var dhoni = {name : 'MS Dhoni', 50:72, 100: 30 };
+undefined
+dhoni.name;
+'MS Dhoni'
+dhoni['name']
+'MS Dhoni'
+dhoni.50
+VM347:1 Uncaught SyntaxError: Unexpected number
+dhoni[50]
+72
+dhoni[100]
+30
+dhoni['sur name'] = 'Dhoni';
+'Dhoni'
+dhoni;
+{50: 72, 100: 30, name: 'MS Dhoni', sur name: 'Dhoni'}
+dhoni.sur name;
+VM541:1 Uncaught SyntaxError: Unexpected identifier
+dhoni['sur name'];
+'Dhoni'

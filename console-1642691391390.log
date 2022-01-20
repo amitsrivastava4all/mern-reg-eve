@@ -1,0 +1,36 @@
+const allowances = {
+  basicSalary: 0,
+  hra: function hra() {
+    return this.basicSalary * 0.5;
+  },
+  da: function da() {
+    return this.basicSalary * 0.2;
+  },
+  ta: function ta() {
+    return this.basicSalary * 0.3;
+  },
+  ma: function ma() {
+    return this.basicSalary * 0.15;
+  },
+  pf: function pf() {
+    return this.basicSalary * 0.05;
+  },
+  gs: function gs() {
+    return this.basicSalary + this.hra() + this.da() + this.ma();
+  },
+  ns: function ns() {
+    return this.gs() - this.pf();
+  },
+};
+
+undefined
+allowances;
+{basicSalary: 0, hra: ƒ, da: ƒ, ta: ƒ, ma: ƒ, …}
+typeof allowances;
+'object'
+allowances.basicSalary = 10000;
+10000
+allowances.hra();
+5000
+allowances.da();
+2000

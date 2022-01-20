@@ -1,0 +1,58 @@
+var a =10;
+undefined
+++a;
+11
+++a;
+12
+--a;
+11
+const MAX = 100;
+undefined
+MAX++;
+VM164:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM164:1
+MAX = 1;
+VM188:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM188:1
+const obj = {};
+undefined
+obj.id = 1001;
+1001
+obj.name = 'Amit';
+'Amit'
+obj = {salary: 6666};
+VM352:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM352:1
+delete obj.id;
+true
+obj;
+{name: 'Amit'}
+obj.city = 'Delhi';
+'Delhi'
+obj;
+{name: 'Amit', city: 'Delhi'}
+const arr  = [10,20,40];
+undefined
+arr;
+(3) [10, 20, 40]
+arr.push(1000);
+4
+arr;
+(4) [10, 20, 40, 1000]
+arr[0] = 545;
+545
+arr;
+(4) [545, 20, 40, 1000]
+arr= [1,3];
+VM712:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM712:1
+var price = 1000;
+undefined
+var price = 100000;
+undefined
+price.toLocaleString('en-US')
+'100,000'
