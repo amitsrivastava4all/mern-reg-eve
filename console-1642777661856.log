@@ -1,0 +1,210 @@
+function show(){
+console.log('I am the Show ');
+}
+undefined
+typeof show;
+'function'
+show();
+VM123:2 I am the Show 
+undefined
+output();
+function output(){
+console.log('I am Output ');
+}
+VM304:3 I am Output 
+undefined
+var x = function(){
+    console.log('I am an Anonymous Function ');
+}
+undefined
+typeof x;
+'function'
+x();
+VM418:2 I am an Anonymous Function 
+undefined
+window.output;
+ƒ output(){
+console.log('I am Output ');
+}
+window.show
+ƒ show(){
+console.log('I am the Show ');
+}
+show(); // global
+VM123:2 I am the Show 
+undefined
+var show  = 100;
+undefined
+show;
+100
+show();
+VM652:1 Uncaught TypeError: show is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM652:1
+function Math(){ // Outer Fn
+console.log('Add is ', add); // undefined
+var x = 100;
+var add = function(a,b){ // this function assign on this line ,where add variables is hoisting
+    return a + b;
+}
+return add; // function Math return Function add
+}
+undefined
+var w = Math();
+VM960:2 Add is  undefined
+undefined
+w;
+ƒ (a,b){ // this function assign on this line ,where add variables is hoisting
+    return a + b;
+}
+typeof w;
+'function'
+w(10,20);
+30
+function Math(){ // Outer Fn
+console.log('Add is ', add); // undefined
+var x = 100;
+var add = function(a,b){ // this function assign on this line ,where add variables is hoisting
+    return a + b;
+}
+var sub = function(a,b){
+    return a - b;
+}
+return [add, sub]; // Array of function return 
+}
+undefined
+var arr = Math();
+VM1165:2 Add is  undefined
+undefined
+arr;
+(2) [ƒ, ƒ]0: ƒ (a,b)1: ƒ (a,b)length: 2[[Prototype]]: Array(0)
+arr[0];
+ƒ (a,b){ // this function assign on this line ,where add variables is hoisting
+    return a + b;
+}
+arr[1];
+ƒ (a,b){
+    return a - b;
+}
+arr[0](10,20);
+30
+arr[1](10,20);
+-10
+function Math(){ // Outer Fn
+console.log('Add is ', add); // undefined
+var x = 100;
+// Named Function Expression (NFE)
+var add = function adder(a,b){ // this function assign on this line ,where add variables is hoisting
+    return a + b;
+}
+var sub = function subtract(a,b){
+    return a - b;
+}
+return [add, sub]; // Array of function return 
+}
+undefined
+var arr = Math();
+VM1413:2 Add is  undefined
+undefined
+arr;
+(2) [ƒ, ƒ]0: ƒ adder(a,b)arguments: nullcaller: nulllength: 2name: "adder"prototype: {constructor: ƒ}[[FunctionLocation]]: VM1413:5[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]1: ƒ subtract(a,b)length: 2[[Prototype]]: Array(0)
+arr[0];
+ƒ adder(a,b){ // this function assign on this line ,where add variables is hoisting
+    return a + b;
+}
+arr[0](10,20);
+30
+var c = arr[0];
+undefined
+typeof c;
+'function'
+c;
+ƒ adder(a,b){ // this function assign on this line ,where add variables is hoisting
+    return a + b;
+}
+c(10,20);
+30
+function Math(){ // Outer Fn
+console.log('Add is ', add); // undefined
+var x = 100;
+// Named Function Expression (NFE)
+var add = function (a,b){ // this function assign on this line ,where add variables is hoisting
+    return a + b;
+}
+var sub = function (a,b){
+    return a - b;
+}
+return {add, sub}; //ES6 Object ShortHand Syntax
+}
+undefined
+var obj = Math();
+VM1711:2 Add is  undefined
+undefined
+obj;
+{add: ƒ, sub: ƒ}add: ƒ (a,b)sub: ƒ (a,b)[[Prototype]]: Object
+obj.add(10,20);
+30
+obj.sub(104,20);
+84
+function reg(){
+    console.log("Reg ");
+    if(10>2){
+        return function(){
+            console.log("Order ");
+            // Order Logic
+                return function (){
+                    console.log("Pay ");
+                    // Pay 
+                    return function (){
+                        console.log("Del ");
+                        // Del
+                }
+        }
+        }
+    }
+}
+
+ 
+
+var order = reg();
+var pay = order();
+var del = pay();
+var track = del();
+
+var isReg = reg();
+if(isReg){
+ var isConfirm  = order();
+    if(isConfirm){
+
+}
+}
+VM2380:2 Reg 
+VM2380:5 Order 
+VM2380:8 Pay 
+VM2380:11 Del 
+VM2380:2 Reg 
+VM2380:5 Order 
+undefined
+
+
+ 
+
+var order = reg();
+var pay = order();
+var del = pay();
+var track = del();
+
+var isReg = reg();
+if(isReg){
+ var isConfirm  = order();
+    if(isConfirm){
+
+}
+}
+VM2380:2 Reg 
+VM2380:5 Order 
+VM2380:8 Pay 
+VM2380:11 Del 
+VM2380:2 Reg 
+VM2380:5 Order 
+undefined

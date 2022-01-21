@@ -1,0 +1,47 @@
+function reg(){
+    console.log("Reg ");
+    if(10>2){
+        return function(){
+            console.log("Order ");
+            // Order Logic
+                return function (){
+                    console.log("Pay ");
+                    // Pay 
+                    return function (){
+                        console.log("Del ");
+                        // Del
+                }
+        }
+        }
+    }
+}
+undefined
+var o = reg();
+VM378:2 Reg 
+undefined
+var p = o();
+VM378:5 Order 
+undefined
+var d = p();
+VM378:8 Pay 
+undefined
+d();
+VM378:11 Del 
+undefined
+reg()()()();
+VM378:2 Reg 
+VM378:5 Order 
+VM378:8 Pay 
+VM378:11 Del 
+undefined
+function process(){
+var order  = function(){
+    return pay;
+}
+var pay = function(){}
+var reg = function(){
+    return order;
+}
+return reg;
+}
+undefined
