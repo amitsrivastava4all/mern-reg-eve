@@ -1,0 +1,42 @@
+function show(){
+console.log("Show ");
+}
+undefined
+var b = function(){
+return 1000;
+}
+undefined
+var c = function c(){
+return 1000;
+}
+undefined
+var e = Function("var a = 10; console.log('A is ',a);");
+undefined
+var add = (a,b)=>a+b;
+undefined
+typeof add;
+'function'
+add(10,20);
+30
+var add = (a,b)=>{
+console.log('A is ',a , ' and b is ',b);
+return a + b;
+}
+undefined
+add(10,20);
+VM551:2 A is  10  and b is  20
+30
+var cube = num=>num^3;
+undefined
+cube(3)
+0
+3**3
+27
+var cube = num=>num**3;
+undefined
+cube(3);
+27
+var d = ()=>"Hello";
+undefined
+d();
+'Hello'

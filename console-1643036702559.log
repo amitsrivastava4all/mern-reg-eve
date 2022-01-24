@@ -1,0 +1,18 @@
+var a = 10;
+undefined
+var b = 20;
+undefined
+var obj = {a,b};
+undefined
+obj;
+{a: 10, b: 20}
+var c = function(){
+    return 1000;
+}
+undefined
+obj = {a,b,c};
+{a: 10, b: 20, c: ƒ}
+obj;
+{a: 10, b: 20, c: ƒ}a: 10b: 20c: ƒ ()[[Prototype]]: Object
+obj.c();
+1000

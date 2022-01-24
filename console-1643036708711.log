@@ -1,0 +1,32 @@
+eval('10+20-2')
+28
+var exp = '10 + 20 -2';
+undefined
+eval(exp);
+28
+exp = 'window.open("https://www.google.com")';
+'window.open("https://www.google.com")'
+typeof exp;
+'string'
+eval(exp);
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+function show(){
+console.log("Show ");
+}
+undefined
+typeof show;
+'function'
+console.dir(show);
+VM793:1 ƒ show()arguments: nullcaller: nulllength: 0name: "show"prototype: {constructor: ƒ}[[FunctionLocation]]: VM700:1[[Prototype]]: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: ​[[Prototype]]: Object[[Scopes]]: Scopes[0][[Scopes]]: Scopes[1]
+undefined
+var d = new Function("var a = 10; var b=20; var c =a+ b;console.log(' C is ', c);");
+undefined
+typeof d;
+'function'
+d();
+VM1036:3  C is  30
+undefined
+var e = Function();
+undefined
+typeof e;
+'function'

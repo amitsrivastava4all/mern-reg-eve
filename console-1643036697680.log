@@ -1,0 +1,63 @@
+const myExport = {
+allowances : {
+hra(){
+console.log("Hra ");
+},
+da(){
+console.log("Da ");
+}
+}
+}
+undefined
+myExport.allowances.hra();
+VM156:4 Hra 
+undefined
+var {} = myExport;
+undefined
+var {allowances} = myExport;
+undefined
+allowances.hra();
+VM156:4 Hra 
+undefined
+var arr = [10,20,30,40,50,60]; // Data Structure
+undefined
+var d = arr[0];
+undefined
+d;
+10
+var e = arr[1];
+undefined
+var [x,y,z] = arr;
+undefined
+x;
+10
+y;
+20
+z;
+30
+var obj = {a:10, b:20, c:[10,20], d:function(){return 100;}};
+undefined
+var e = obj.a;
+undefined
+e;
+10
+var {b, d} = obj;
+undefined
+b;
+20
+d;
+ƒ (){return 100;}
+d();
+100
+arr;
+(6) [10, 20, 30, 40, 50, 60]0: 101: 202: 303: 404: 505: 60length: 6[[Prototype]]: Array(0)
+var [x,y,z] = arr;
+undefined
+var [x,,,y,,z] = arr;
+undefined
+x;
+10
+y;
+40
+z;
+60
