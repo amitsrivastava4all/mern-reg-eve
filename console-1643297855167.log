@@ -1,0 +1,143 @@
+var amit = {id:1001, name:'Amit Srivastava', city:'Delhi' , phones:[2222,4444],print:function(){}};
+undefined
+typeof amit;
+'object'
+amit.name;
+'Amit Srivastava'
+amit['name'];
+'Amit Srivastava'
+amit instanceof Object;
+true
+typeof Object;
+'function'
+function createCustomer(id, name, city='Delhi', phones=[]){
+    var customer = {};
+    customer.id = id;
+    customer.name = name;
+    customer.city = city;
+    customer.phones = phones;
+}
+undefined
+typeof createCustomer;
+'function'
+function createCustomer(id, name, city='Delhi', phones=[]){
+    var customer = {};
+    customer.id = id;
+    customer.name = name;
+    customer.city = city;
+    customer.phones = phones;
+    return customer;
+}
+undefined
+createCustomer(1001, "Ram", "Mumbai",[1111,3333]);
+{id: 1001, name: 'Ram', city: 'Mumbai', phones: Array(2)}city: "Mumbai"id: 1001name: "Ram"phones: (2) [1111, 3333][[Prototype]]: Object
+var ram = createCustomer(1001, "Ram", "Mumbai",[1111,3333]);
+undefined
+typeof ram;
+'object'
+ram instanceof Object;
+true
+ram;
+{id: 1001, name: 'Ram', city: 'Mumbai', phones: Array(2)}
+var shyam = createCustomer(1002, "Shyam");
+undefined
+shyam;
+{id: 1002, name: 'Shyam', city: 'Delhi', phones: Array(0)}
+typeof shyam;
+'object'
+shyam instanceof Object;
+true
+function createEmployee(id, name, salary, company,city='Delhi', phones=[]){
+    var emp = {}; //OBject Literal
+    emp.id = id;
+    emp.name = name;
+    emp.salary = salary;
+    emp.company = company;
+    emp.city = city;
+    emp.phones = phones;
+    return emp;// Object return 
+}
+undefined
+function createCustomer(id, name, city='Delhi', phones=[]){
+    var customer = {};
+    customer.id = id;
+    customer.name = name;
+    customer.city = city;
+    customer.phones = phones;
+    return customer;
+}
+undefined
+var amit = createEmployee(1001, "Amit",44444, "Brain Mentors");
+undefined
+amit;
+{id: 1001, name: 'Amit', salary: 44444, company: 'Brain Mentors', city: 'Delhi', …}
+amit instanceof Object;
+true
+ram;
+{id: 1001, name: 'Ram', city: 'Mumbai', phones: Array(2)}
+ram instanceof Object;
+true
+function Employee(id, name, salary, company,city='Delhi', phones=[]){
+   // var emp = {}; //OBject Literal
+    console.log('What is this ' ,this); // Employee {}
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+    this.company = company;
+    this.city = city;
+    this.phones = phones;
+    console.log('This is ',this);
+   // return emp;// Object return 
+}
+var amit = new Employee(1001 , "Amit", 999999,"Brain Mentors");
+VM1829:3 What is this  Employee {}city: "Delhi"company: "Brain Mentors"id: 1001name: "Amit"phones: []salary: 999999[[Prototype]]: Object
+VM1829:10 This is  Employee {id: 1001, name: 'Amit', salary: 999999, company: 'Brain Mentors', city: 'Delhi', …}
+undefined
+ram;
+{id: 1001, name: 'Ram', city: 'Mumbai', phones: Array(2)}
+amit instanceof Employee;
+true
+ram instanceof createCustomer;
+false
+ram instanceof Object;
+true
+amit instanceof Object;
+true
+amit;
+Employee {id: 1001, name: 'Amit', salary: 999999, company: 'Brain Mentors', city: 'Delhi', …}
+ram;
+{id: 1001, name: 'Ram', city: 'Mumbai', phones: Array(2)}
+this == window;
+true
+Employee(1001, "Amit",8888, "BM");
+VM1829:3 What is this  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM1829:10 This is  Window {window: Window, self: Window, document: document, name: 'Amit', location: Location, …}
+undefined
+new Employee(99, "Ramesh",8888,"BM");
+VM1829:3 What is this  Employee {}
+VM1829:10 This is  Employee {id: 99, name: 'Ramesh', salary: 8888, company: 'BM', city: 'Delhi', …}city: "Delhi"company: "BM"id: 99name: "Ramesh"phones: []salary: 8888[[Prototype]]: Object
+Employee {id: 99, name: 'Ramesh', salary: 8888, company: 'BM', city: 'Delhi', …}
+function show(){
+
+console.log("What is This ",this);
+}
+undefined
+show(); // window.show();
+VM2362:3 What is This  Window {window: Window, self: Window, document: document, name: 'Amit', location: Location, …}
+undefined
+var s = new show(); 
+VM2362:3 What is This  show {}[[Prototype]]: Object
+undefined
+typeof s;
+'object'
+var d = ()=>console.log(this);
+undefined
+this;
+Window {window: Window, self: Window, document: document, name: 'Amit', location: Location, …}
+d();
+VM2579:1 Window {window: Window, self: Window, document: document, name: 'Amit', location: Location, …}
+undefined
+var w = new d();
+VM2678:1 Uncaught TypeError: d is not a constructor
+    at <anonymous>:1:9
+(anonymous) @ VM2678:1
