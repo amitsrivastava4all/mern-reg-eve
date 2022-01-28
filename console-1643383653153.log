@@ -1,0 +1,64 @@
+function Employee(id, name, salary, company,city='Delhi', phones=[]){
+   // var emp = {}; //OBject Literal
+    //console.log('What is this ' ,this); // Employee {}
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+    this.company = company;
+    this.city = city;
+    this.phones = phones;
+    this.print = function(){
+    console.log(`Id ${this.id} Name ${this.name} Salary ${this.salary}`);
+}
+    //console.log('This is ',this);
+   // return emp;// Object return 
+}
+var amit = new Employee(1001 , "Amit", 999999,"Brain Mentors");
+undefined
+amit;
+Employee {id: 1001, name: 'Amit', salary: 999999, company: 'Brain Mentors', city: 'Delhi', …}
+amit.print();
+VM163:11 Id 1001 Name Amit Salary 999999
+undefined
+var ram = new Employee(1002, "Ram",5555,"Brain Mentors");
+undefined
+ram.print();
+VM163:11 Id 1002 Name Ram Salary 5555
+undefined
+amit;
+Employee {id: 1001, name: 'Amit', salary: 999999, company: 'Brain Mentors', city: 'Delhi', …}city: "Delhi"company: "Brain Mentors"id: 1001name: "Amit"phones: []print: ƒ ()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}[[FunctionLocation]]: VM163:10[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]salary: 999999[[Prototype]]: Object
+ram;
+Employee {id: 1002, name: 'Ram', salary: 5555, company: 'Brain Mentors', city: 'Delhi', …}city: "Delhi"company: "Brain Mentors"id: 1002name: "Ram"phones: []print: ƒ ()salary: 5555[[Prototype]]: Object
+typeof Employee;
+'function'
+console.log(Employee.prototype);
+VM506:1 {constructor: ƒ}
+undefined
+typeof Employee;
+'function'
+typeof Employee.prototype;
+'object'
+Employee.prototype;
+{constructor: ƒ}
+Employee.prototype.constructor == Employee;
+true
+Employee.prototype;
+{constructor: ƒ}constructor: ƒ Employee(id, name, salary, company,city='Delhi', phones=[])[[Prototype]]: Object
+Employee.prototype.__proto__ == Object.prototype;
+true
+Employee.prototype.__proto__.constructor== Object;
+true
+amit;
+Employee {id: 1001, name: 'Amit', salary: 999999, company: 'Brain Mentors', city: 'Delhi', …}
+amit.__proto__ == Employee.prototype;
+true
+amit.__proto__.__proto__== Object.prototype;
+true
+amit.__proto__== Employee.prototype;
+true
+amit.__proto__.__proto__ == Object.prototype;
+true
+amit.__proto__.__proto__.constructor == Object;
+true
+amit.__proto__.__proto__.__proto__;
+null
