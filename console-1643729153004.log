@@ -1,0 +1,52 @@
+function Customer(id , name, balance){
+    this.id = id;
+    this.name =name;
+    this.balance = balance;
+}
+undefined
+Customer.prototype;
+{constructor: ƒ}
+typeof Customer.prototype;
+'object'
+Customer.prototype.x = 100;
+100
+Customer.prototype;
+{x: 100, constructor: ƒ}
+var ram = new Customer(1001, 'Ram', 8888);
+undefined
+typeof ram;
+'object'
+ram instanceof Customer;
+true
+ram;
+Customer {id: 1001, name: 'Ram', balance: 8888}balance: 8888id: 1001name: "Ram"[[Prototype]]: Object
+ram.__proto__;
+{x: 100, constructor: ƒ}
+ram.__proto__ == Customer.prototype;
+true
+Customer.prototype
+{x: 100, constructor: ƒ}
+Customer.prototype.constructor
+ƒ Customer(id , name, balance){
+    this.id = id;
+    this.name =name;
+    this.balance = balance;
+}
+Customer;
+ƒ Customer(id , name, balance){
+    this.id = id;
+    this.name =name;
+    this.balance = balance;
+}
+Customer == Customer.prototype.constructor;
+true
+Customer === Customer.prototype.constructor;
+true
+10 == "10"
+true
+10==="10"
+false
+Customer.prototype;
+{x: 100, constructor: ƒ}x: 100constructor: ƒ Customer(id , name, balance)[[Prototype]]: Objectconstructor: ƒ Object()assign: ƒ assign()create: ƒ create()defineProperties: ƒ defineProperties()defineProperty: ƒ defineProperty()entries: ƒ entries()freeze: ƒ freeze()fromEntries: ƒ fromEntries()getOwnPropertyDescriptor: ƒ getOwnPropertyDescriptor()getOwnPropertyDescriptors: ƒ getOwnPropertyDescriptors()getOwnPropertyNames: ƒ getOwnPropertyNames()getOwnPropertySymbols: ƒ getOwnPropertySymbols()getPrototypeOf: ƒ getPrototypeOf()hasOwn: ƒ hasOwn()is: ƒ is()isExtensible: ƒ isExtensible()isFrozen: ƒ isFrozen()isSealed: ƒ isSealed()keys: ƒ keys()length: 1name: "Object"preventExtensions: ƒ preventExtensions()prototype: {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}seal: ƒ seal()setPrototypeOf: ƒ setPrototypeOf()values: ƒ values()arguments: (...)caller: (...)[[Prototype]]: ƒ ()[[Scopes]]: Scopes[0]hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: Objectget __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+Customer.prototype.__proto__.constructor;
+ƒ Object() { [native code] }

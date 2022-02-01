@@ -1,0 +1,4 @@
+let icon = document.createElement('i');
+undefined
+icon;
+<i>​</i>​

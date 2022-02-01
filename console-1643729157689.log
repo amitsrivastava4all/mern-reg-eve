@@ -1,0 +1,31 @@
+function show(){
+console.log("I am SHow ");
+}
+undefined
+show.prototype;
+{constructor: ƒ}
+const a = function(){
+}
+undefined
+a.prototype;
+{constructor: ƒ}
+const b = ()=>1000;
+undefined
+b.prototype;
+undefined
+b();
+1000
+var obj = {};
+undefined
+obj.__proto__ == Object.prototype;
+true
+var arr = [10,20,30];
+undefined
+arr.__proto__ == Array.prototype;
+true
+arr.__proto__.__proto__ == Object.prototype;
+true
+obj;
+{}
+arr.__proto__.__proto__.__proto__;
+null
