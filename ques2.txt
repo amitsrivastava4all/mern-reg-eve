@@ -1,0 +1,10 @@
+Declerative
+
+1. Prices Array Given
+Find Max Price
+
+2. Find Min Price
+
+3. Prices Array Clone (With out spread, with out filter, with out map)
+
+4. Multiple Prices Delete those > 20000
