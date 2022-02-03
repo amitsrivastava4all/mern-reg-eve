@@ -1,0 +1,87 @@
+let myVar = 1; 
+function foo(myParam = function() { return myVar + 3 } ) // t is local 
+{
+  let myVar = 5; // Local
+  console.log(myParam()) // log 4 :) 
+}
+foo();
+VM549:5 4
+undefined
+let myVar1 = 1; 
+function foo2(myParam = function() { return myVar1 + 3 } ) // t is local 
+{
+   console.log(myVar1); // TDZ 
+  let myVar1 = 5; // Local
+  console.log(myParam()) // log 4 :) 
+}
+foo2();
+VM617:4 Uncaught ReferenceError: Cannot access 'myVar1' before initialization
+    at foo2 (<anonymous>:4:16)
+    at <anonymous>:8:1
+foo2 @ VM617:4
+(anonymous) @ VM617:8
+function test(){
+    if(10>2){
+        console.log(m);
+        let m = 10;
+}
+}
+undefined
+test();
+VM725:3 Uncaught ReferenceError: Cannot access 'm' before initialization
+    at test (<anonymous>:3:21)
+    at <anonymous>:1:1
+test @ VM725:3
+(anonymous) @ VM745:1
+function test(){
+    console.log(m);
+    if(10>2){
+        
+        let m = 10;
+}
+}
+undefined
+test();
+VM777:2 Uncaught ReferenceError: m is not defined
+    at test (<anonymous>:2:17)
+    at <anonymous>:1:1
+test @ VM777:2
+(anonymous) @ VM797:1
+function test(){
+    console.log(m);
+    let m = 20;
+    if(10>2){
+        
+        let m = 10;
+}
+}
+undefined
+test();
+VM827:2 Uncaught ReferenceError: Cannot access 'm' before initialization
+    at test (<anonymous>:2:17)
+    at <anonymous>:1:1
+test @ VM827:2
+(anonymous) @ VM833:1
+let m = 1;
+function test(){
+    console.log(m);
+   
+    if(10>2){
+        
+        let m = 10;
+}
+}
+undefined
+test();
+VM878:3 1
+undefined
+var myVar = 1; // Global
+function foo(myParam = function() { return myVar + 3 } ) // t is local 
+{
+  var myVar = 5; // Local
+  console.log(myParam()) // log 4 :) 
+}
+foo();
+VM911:1 Uncaught SyntaxError: Identifier 'myVar' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM911:1

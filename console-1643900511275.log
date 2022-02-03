@@ -1,0 +1,8 @@
+var x= 10;
+undefined
+x.toLocaleString('hi-IN');
+'10'
+x = 100000;
+100000
+x.toLocaleString('hi-IN');
+'1,00,000'

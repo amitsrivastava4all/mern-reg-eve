@@ -1,0 +1,94 @@
+var prices = [90,100,200,555,333,222,111];
+prices.map(price=> price + price * 0.18);
+(7) [106.2, 118, 236, 654.9, 392.94, 261.96, 130.98]
+var prices = [90,100,200,555,333,222,111];
+var gstPrices = prices.map(price=> price + price * 0.18);
+undefined
+gstPrices;
+(7) [106.2, 118, 236, 654.9, 392.94, 261.96, 130.98]
+prices;
+(7) [90, 100, 200, 555, 333, 222, 111]
+prices;
+(7) [90, 100, 200, 555, 333, 222, 111]
+prices.map(price=>`Rs ${price.toLocaleString('hi-IN'))}`;
+VM535:1 Uncaught SyntaxError: Missing } in template expression
+prices.map(price=>`Rs ${price.toLocaleString('hi-IN')}`);
+(7) ['Rs 90', 'Rs 100', 'Rs 200', 'Rs 555', 'Rs 333', 'Rs 222', 'Rs 111']
+prices = [10000,20000,50000,77777];
+(4) [10000, 20000, 50000, 77777]
+prices.map(price=>`Rs ${price.toLocaleString('hi-IN')}`);
+(4) ['Rs 10,000', 'Rs 20,000', 'Rs 50,000', 'Rs 77,777']
+prices;
+(4) [10000, 20000, 50000, 77777]
+prices.forEach(price=>console.log(price));
+VM774:1 10000
+VM774:1 20000
+VM774:1 50000
+VM774:1 77777
+undefined
+prices.forEach((price,index)=>console.log(price, index));
+VM842:1 10000 0
+VM842:1 20000 1
+VM842:1 50000 2
+VM842:1 77777 3
+undefined
+prices.forEach((price,index, arr)=>console.log(price, index, arr));
+VM869:1 10000 0 (4) [10000, 20000, 50000, 77777]
+VM869:1 20000 1 (4) [10000, 20000, 50000, 77777]
+VM869:1 50000 2 (4) [10000, 20000, 50000, 77777]
+VM869:1 77777 3 (4) [10000, 20000, 50000, 77777]
+undefined
+prices.find(price=>price==50000);
+50000
+prices.find(price=>price==150000);
+undefined
+prices.findIndex(price=>price==50000);
+2
+prices.findIndex(price=>price==150000);
+-1
+prices.findIndex(price=>price>10000);
+1
+prices.filter(price=>price>10000);
+(3) [20000, 50000, 77777]
+var ps = prices.map(price=>price);
+undefined
+ps 
+(4) [10000, 20000, 50000, 77777]
+prices;
+(4) [10000, 20000, 50000, 77777]
+prices == ps;
+false
+var d = [...prices];
+undefined
+d;
+(4) [10000, 20000, 50000, 77777]
+d == prices;
+false
+prices.filter(price=>true);
+(4) [10000, 20000, 50000, 77777]
+var sum = 0;
+for(let i = 0; i<prices.length; i++){
+sum+=prices[i];
+}
+console.log(sum);
+VM1805:5 157777
+undefined
+prices.reduce((sum, price)=>sum+price,0);
+157777
+prices.reduce((sum, price)=>{
+console.log(sum, price);
+return sum + price;
+});
+VM2148:2 10000 20000
+VM2148:2 30000 50000
+VM2148:2 80000 77777
+157777
+prices.reduce((sum, price)=>{
+console.log(sum, price);
+return sum + price;
+},0);
+VM2158:2 0 10000
+VM2158:2 10000 20000
+VM2158:2 30000 50000
+VM2158:2 80000 77777
+157777
