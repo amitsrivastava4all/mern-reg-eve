@@ -1,0 +1,40 @@
+function show(){
+console.log('This is ',this);
+}
+undefined
+var obj = {
+a:show()
+}
+VM182:2 This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+var obj = {
+a:function(){
+    show();
+}
+}
+undefined
+obj.a();
+VM182:2 This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+var obj = {
+a:function(){
+    console.log("This is ",this);
+    show();
+}
+}
+undefined
+obj.a();
+VM352:3 This is  {a: ƒ}
+VM182:2 This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+w();
+VM410:1 Uncaught ReferenceError: w is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM410:1
+var obj = {
+a:show
+}
+undefined
+obj.a();
+VM182:2 This is  {a: ƒ}
+undefined

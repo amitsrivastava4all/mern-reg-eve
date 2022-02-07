@@ -1,0 +1,22 @@
+var arr = [90,11,55,88,33,12];
+undefined
+arr.sort((a,b)=>a-b);
+(6) [11, 12, 33, 55, 88, 90]
+arr;
+(6) [11, 12, 33, 55, 88, 90]
+arr.sort((a,b)=>b-a);
+(6) [90, 88, 55, 33, 12, 11]
+"Amit" - "Srivastava"
+NaN
+"Amit".localeCompare("Ajay")
+1
+"Ajay".localeCompare("Amit")
+-1
+"Amit".localeCompare("Amit")
+0
+var names = ["amit","anil","ajay","shyam"];
+undefined
+names.sort((a,b)=>a.localeCompare(b));
+(4) ['ajay', 'amit', 'anil', 'shyam']
+names.sort((a,b)=>b.localeCompare(a));
+(4) ['shyam', 'anil', 'amit', 'ajay']

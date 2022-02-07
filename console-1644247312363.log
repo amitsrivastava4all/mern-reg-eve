@@ -1,0 +1,44 @@
+var arr = [10,20,30,40,50];
+undefined
+var b = [...arr];
+undefined
+b;
+(5) [10, 20, 30, 40, 50]
+var f = arr.filter(e=>e);
+undefined
+f;
+(5) [10, 20, 30, 40, 50]
+var e = arr.map(r=>r);
+undefined
+e;
+(5) [10, 20, 30, 40, 50]
+arr.reduce((arr2, current)=>arr2.push(current),[]);4
+VM456:1 Uncaught TypeError: arr2.push is not a function
+    at <anonymous>:1:34
+    at Array.reduce (<anonymous>)
+    at <anonymous>:1:5
+(anonymous) @ VM456:1
+(anonymous) @ VM456:1
+arr.reduce((arr2, current)=>{
+arr2.push(current);
+return arr2;
+},[]);
+(5) [10, 20, 30, 40, 50]
+var p .=arr.reduce((arr2, current)=>{
+arr2.push(current);
+return arr2;
+},[]);
+VM495:1 Uncaught SyntaxError: Unexpected token '.'
+var p =arr.reduce((arr2, current)=>{
+arr2.push(current);
+return arr2;
+},[]);
+undefined
+p == arr;
+false
+p;
+(5) [10, 20, 30, 40, 50]
+parseInt("100");
+100
+arr.push(444);
+6
