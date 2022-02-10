@@ -1,0 +1,71 @@
+function Person(name, phone){
+    this.name = name;
+    this.phone = phone;
+    
+}
+Person.prototype.print = function(){
+console.log(`Name ${this.name} Phone ${this.phone}`);
+}
+Person.prototype.getPhone = function(){
+    return this.phone;
+}
+function Employee(id, salary, dept){
+    this.id = id;
+    this.salary = salary;
+    this.dept= dept;
+}
+Employee.prototype.print = function(){
+    console.log(`Id ${this.id} Salary ${this.salary} Dept ${this.dept}`);
+}
+ƒ (){
+    console.log(`Id ${this.id} Salary ${this.salary} Dept ${this.dept}`);
+}
+Employee.prototype.__proto__ == Object.prototype;
+true
+Person.prototype.__proto__ == Object.prototype;
+true
+Employee.prototype.__proto__ = Person.prototype;
+{print: ƒ, getPhone: ƒ, constructor: ƒ}
+Employee.prototype.__proto__ == Object.prototype;
+false
+Employee.prototype.__proto__ == Person.prototype;
+true
+var amit  = new Employee(1001, 9000,'IT');
+undefined
+amit;
+Employee {id: 1001, salary: 9000, dept: 'IT'}
+amit.print();
+VM1057:18 Id 1001 Salary 9000 Dept IT
+undefined
+amit.__proto__ == Employee.prototype;
+true
+Employee.prototype.print;
+ƒ (){
+    console.log(`Id ${this.id} Salary ${this.salary} Dept ${this.dept}`);
+}
+typeof Employee;
+'function'
+Person.prototype.__proto__ == Object.prototype;
+true
+console.dir(Person);
+VM1937:1 ƒ Person(name, phone)arguments: nullcaller: nulllength: 2name: "Person"prototype: {print: ƒ, getPhone: ƒ, constructor: ƒ}[[FunctionLocation]]: VM1057:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+console.dir(Person.prototype);
+VM2064:1 ObjectgetPhone: ƒ ()print: ƒ ()constructor: ƒ Person(name, phone)[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+undefined
+Person.prototype;
+{print: ƒ, getPhone: ƒ, constructor: ƒ}getPhone: ƒ ()print: ƒ ()constructor: ƒ Person(name, phone)[[Prototype]]: Object
+typeof Person.prototype;
+'object'
+Person.__proto__
+ƒ () { [native code] }
+console.dir(Person.__proto__);
+VM2300:1 ƒ anonymous()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: ​[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[Scopes]]: Scopes[0]
+undefined
+Person.__proto__ 
+ƒ () { [native code] }
+Person.prototype
+{print: ƒ, getPhone: ƒ, constructor: ƒ}
+console.dir(Person.__proto__);
+VM2493:1 ƒ anonymous()apply: ƒ apply()arguments: (...)bind: ƒ bind()length: 1name: "bind"arguments: (...)caller: (...)[[Prototype]]: ƒ ()[[Scopes]]: Scopes[0]call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: ​[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[Scopes]]: Scopes[0]
+undefined

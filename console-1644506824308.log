@@ -1,0 +1,160 @@
+class Task {
+  constructor(id, name, desc, date, url, isMarked = false) {
+    this.id = id;
+    this.name = name;
+    this.desc = desc;
+    this.date = date;
+    this.url = url;
+    this.isMarked = isMarked;
+  }
+  toggle() {
+    this.isMarked = !this.isMarked;
+  }
+}
+undefined
+typeof Task;
+'function'
+Task.prototype;
+{constructor: ƒ, toggle: ƒ}
+Task.prototype.__proto__ == Object.prototype;
+true
+class A{
+constructor(){
+console.log("A Cons Call ");
+    
+}
+    show(){
+
+        console.log("A Show ");
+    }
+    display(){
+        console.log("A Disp");
+    }
+    
+}
+class B extends A{
+    constructor(){
+            super(); 
+    console.log("B Cons Call ");
+        
+    }
+    show(){
+        console.log("I am B Show ");
+    }
+}
+var b = new B();
+b.show();
+VM1109:3 A Cons Call 
+VM1109:18 B Cons Call 
+VM1109:22 I am B Show 
+undefined
+b.display();
+VM1109:11 A Disp
+undefined
+A.prototype;
+{constructor: ƒ, show: ƒ, display: ƒ}
+B.prototype;
+A {constructor: ƒ, show: ƒ}
+b.__proto__ == B.prototype;
+true
+console.dir(b);
+VM1280:1 B[[Prototype]]: Aconstructor: class Bshow: ƒ show()[[Prototype]]: Objectconstructor: class Adisplay: ƒ display()show: ƒ show()[[Prototype]]: Object
+undefined
+B.prototype.__proto__ == A.prototype;
+true
+b.__proto__.__proto__ == A.prototype;
+true
+b.__proto__ == B.prototype;
+true
+b.__proto__.__proto__.__proto__ == Object.prototype;
+true
+class Math{
+
+static sqrt(){
+
+    console.log('Math sqrt ');
+}
+}
+undefined
+Math.sqrt();
+VM1782:5 Math sqrt 
+undefined
+typeof Math;
+'function'
+Math.sqrt;
+ƒ sqrt(){
+
+    console.log('Math sqrt ');
+}
+Math.prototype.__proto__ == Object.prototype;
+true
+var obj= {};
+undefined
+typeof obj;
+'object'
+var fn = function(){
+    
+}
+undefined
+typeof obj;
+'object'
+typeof fn;
+'function'
+var obj2 = new Object();
+undefined
+var fn2= new Function();
+undefined
+typeof obj2;
+'object'
+typeof fn2;
+'function'
+obj2();
+VM2346:1 Uncaught TypeError: obj2 is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM2346:1
+fn2();
+undefined
+fn2.prototype.__proto__ == Object.prototype;
+true
+var fn3 = new Function("x", "y", "return x * y;");
+undefined
+fn3;
+ƒ anonymous(x,y
+) {
+return x * y;
+}
+typeof fn3;
+'function'
+fn3(10,20);
+200
+obj;
+{}
+obj.__proto__.prototype == Object.prototype;
+false
+obj.__proto__ == Object.prototype;
+true
+obj.id = 1001;
+1001
+obj.name = "Amit";
+'Amit'
+obj.salary = 545454;
+545454
+obj;
+{id: 1001, name: 'Amit', salary: 545454}
+delete obj.id;
+true
+obj;
+{name: 'Amit', salary: 545454}
+fn3.id = 1001;
+1001
+fn3.ename = 'Amit';
+'Amit'
+fn3;
+ƒ anonymous(x,y
+) {
+return x * y;
+}
+fn3.id;
+1001
+fn3.ename;
+'Amit'
