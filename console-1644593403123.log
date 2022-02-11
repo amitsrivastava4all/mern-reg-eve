@@ -1,0 +1,227 @@
+function whoAmI(){
+ console.log(' I am ',this, 'Name ' , this.name);
+    
+}
+undefined
+var name = 'Amit';
+undefined
+window.name;
+'Amit'
+window == this;
+true
+whoAmI(); // window.whoAmI(); 
+VM270:2  I am  Window {window: Window, self: Window, document: document, name: 'Amit', location: Location, …} Name  Amit
+undefined
+var obj = {
+    name:'Ram',
+    show(){
+        console.log("I am ", this, this.name);
+        
+    }
+    
+}
+undefined
+obj.show();
+VM754:4 I am  {name: 'Ram', show: ƒ} Ram
+undefined
+whoAmI(); // window.whoAmI(); 
+VM270:2  I am  Window {window: Window, self: Window, document: document, name: 'Amit', location: Location, …} Name  Amit
+undefined
+obj.whoAmI;
+undefined
+obj.whoAmI();
+VM877:1 Uncaught TypeError: obj.whoAmI is not a function
+    at <anonymous>:1:5
+(anonymous) @ VM877:1
+obj;
+{name: 'Ram', show: ƒ}
+window.name;
+'Amit'
+obj.name;
+'Ram'
+whoAmI
+ƒ whoAmI(){
+ console.log(' I am ',this, 'Name ' , this.name);
+    
+}
+console.dir(whoAmI);
+VM1062:1 ƒ whoAmI()arguments: nullcaller: nulllength: 0name: "whoAmI"prototype: {constructor: ƒ}[[FunctionLocation]]: VM270:1[[Prototype]]: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: ​[[Prototype]]: Object[[Scopes]]: Scopes[0][[Scopes]]: Scopes[1]
+undefined
+whoAmI.call(obj); // Explicit Binding - Hard Binding
+VM270:2  I am  {name: 'Ram', show: ƒ} Name  Ram
+undefined
+whoAmI(); // window.whoAmI(); 
+VM270:2  I am  Window {window: Window, self: Window, document: document, name: 'Amit', location: Location, …} Name  Amit
+undefined
+whoAmI.apply(obj);
+VM270:2  I am  {name: 'Ram', show: ƒ} Name  Ram
+undefined
+function whoAmI(age, salary, city, phone, email){
+ console.log( 'Name ' , this.name, age, salary, city, phone, email);
+    
+}
+undefined
+window.whoAmI.call(obj, 21, 9999,'Delhi',2222,'ram@yahoo.com');
+VM1663:2 Name  Ram 21 9999 Delhi 2222 ram@yahoo.com
+undefined
+var arr = [ 21, 9999,'Delhi',2222,'ram@yahoo.com'];
+window.whoAmI.apply(obj,arr);
+VM1663:2 Name  Ram 21 9999 Delhi 2222 ram@yahoo.com
+undefined
+var q = [10,20,30,40,50];
+undefined
+var d = q[0];
+undefined
+d;
+10
+var [a,,,b] = q;
+undefined
+a;
+10
+b;
+40
+var e = {id:1001, name:'Ram', age:21};
+undefined
+var {name, age} =  e;
+undefined
+name;
+'Ram'
+age;
+21
+function test([a,b,c]){
+    console.log(a,b,c);
+    
+}
+var f = [10,20,30];
+test(f);
+VM2648:2 10 20 30
+undefined
+function test2({name , age}){
+    console.log(name, age);
+}
+undefined
+test2(e);
+VM2822:2 Ram 21
+undefined
+whoAmI;
+ƒ whoAmI(age, salary, city, phone, email){
+ console.log( 'Name ' , this.name, age, salary, city, phone, email);
+    
+}
+obj;
+{name: 'Ram', show: ƒ}
+whoAmI.call(obj,21,9999,'Delhi',2222,'ram@yahoo.com');
+VM1663:2 Name  Ram 21 9999 Delhi 2222 ram@yahoo.com
+undefined
+var fn = whoAmI.bind(obj);
+undefined
+fn(21, 9999,'Delhi',4444,'ram@yahoo.com');
+VM1663:2 Name  Ram 21 9999 Delhi 4444 ram@yahoo.com
+undefined
+fn(21, 9999,'Delhi',4444,'ram@yahoo.com');
+VM1663:2 Name  Ram 21 9999 Delhi 4444 ram@yahoo.com
+undefined
+fn(21, 9999,'Delhi',4444,'ram@yahoo.com');
+VM1663:2 Name  Ram 21 9999 Delhi 4444 ram@yahoo.com
+undefined
+fn(21, 9999,'Delhi',4444,'ram@yahoo.com');
+VM1663:2 Name  Ram 21 9999 Delhi 4444 ram@yahoo.com
+undefined
+fn(22, 9999,'Delhi',4444,'ram@yahoo.com');
+VM1663:2 Name  Ram 22 9999 Delhi 4444 ram@yahoo.com
+undefined
+var obj = {
+    arr :[10,210,301,401,50,60],
+    even:[],
+    odd:[],
+    evenOdd(){
+        this.arr.forEach(function(ele){
+            if(ele%2==0){
+                this.even.push(ele);
+            }
+            else{
+                    this.odd.push(ele);
+            }
+        }
+    }
+    
+}
+VM3796:13 Uncaught SyntaxError: missing ) after argument list
+var obj = {
+    arr :[10,210,301,401,50,60],
+    even:[],
+    odd:[],
+    evenOdd(){
+        this.arr.forEach(function(ele){
+            if(ele%2==0){
+                this.even.push(ele);
+            }
+            else{
+                    this.odd.push(ele);
+            }
+        });
+    }
+    
+}
+undefined
+obj.evenOdd();
+VM3808:8 Uncaught TypeError: Cannot read properties of undefined (reading 'push')
+    at <anonymous>:8:27
+    at Array.forEach (<anonymous>)
+    at Object.evenOdd (<anonymous>:6:18)
+    at <anonymous>:1:5
+(anonymous) @ VM3808:8
+evenOdd @ VM3808:6
+(anonymous) @ VM3858:1
+var obj = {
+    arr :[10,210,301,401,50,60],
+    even:[],
+    odd:[],
+    evenOdd(){
+        var that = this;
+        this.arr.forEach(function(ele){
+            if(ele%2==0){
+                that.even.push(ele);
+            }
+            else{
+                    that.odd.push(ele);
+            }
+        });
+    }
+    
+}
+undefined
+obj.evenOdd();
+undefined
+obj.even
+(4) [10, 210, 50, 60]
+obj.odd;
+(2) [301, 401]
+var obj = {
+    arr :[10,210,301,401,50,60],
+    even:[],
+    odd:[],
+    evenOdd(){
+        
+        this.arr.forEach((ele)=>{
+            if(ele%2==0){
+                this.even.push(ele);
+            }
+            else{
+                    this.odd.push(ele);
+            }
+        });
+    }
+    
+}
+undefined
+obj.even = [];
+[]
+obj.odd = [];
+[]
+obj.evenOdd();
+undefined
+obj.even;
+(4) [10, 210, 50, 60]
+obj.odd;
+(2) [301, 401]

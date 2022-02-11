@@ -1,0 +1,126 @@
+function Person(name, phone){
+    this.name = name;
+    this.phone = phone;
+    
+}
+Person.prototype.print = function(){
+console.log(`Name ${this.name} Phone ${this.phone}`);
+}
+Person.prototype.getPhone = function(){
+    return this.phone;
+}
+function Employee(id, salary, dept){
+    this.id = id;
+    this.salary = salary;
+    this.dept= dept;
+}
+Employee.prototype.print = function(){
+    console.log(`Id ${this.id} Salary ${this.salary} Dept ${this.dept}`);
+}
+ƒ (){
+    console.log(`Id ${this.id} Salary ${this.salary} Dept ${this.dept}`);
+}
+Employee.prototype.__proto__ == Person.prototype;
+false
+Employee.prototype.__proto__ = Person.prototype;
+{print: ƒ, getPhone: ƒ, constructor: ƒ}
+var ram = new Employee(1002, "Ram",5555,"IT",99999);
+undefined
+ram;
+Employee {id: 1002, salary: 'Ram', dept: 5555}
+function Person(name, phone){
+    console.log("I am Person Cons ");
+    this.name = name;
+    this.phone = phone;
+    
+}
+Person.prototype.print = function(){
+console.log(`Name ${this.name} Phone ${this.phone}`);
+}
+Person.prototype.getPhone = function(){
+    return this.phone;
+}
+function Employee(id, salary, dept){
+    console.log("I am emp Cons ");
+    this.id = id;
+    this.salary = salary;
+    this.dept= dept;
+}
+Employee.prototype.print = function(){
+    console.log(`Id ${this.id} Salary ${this.salary} Dept ${this.dept}`);
+}
+ƒ (){
+    console.log(`Id ${this.id} Salary ${this.salary} Dept ${this.dept}`);
+}
+Employee.prototype.__proto__ = Person.prototype;
+{print: ƒ, getPhone: ƒ, constructor: ƒ}
+var ram = new Employee(1002, 99999, "IT", "Ram",5555);
+VM575:14 I am emp Cons 
+undefined
+function Person(name, phone){
+    console.log('Person cons call ' , this);
+    this.name = name;
+    this.phone = phone;
+    
+}
+Person.prototype.print = function(){
+console.log(`Name ${this.name} Phone ${this.phone}`);
+}
+Person.prototype.getPhone = function(){
+    return this.phone;
+}
+function Employee(id, salary, dept, name, phone){
+    Person.call(this, name, phone);
+    console.log('Emp Cons Call ', this);
+    this.id = id;
+    this.salary = salary;
+    this.dept= dept;
+    console.log('Emp Cons Call Ends ', this);
+}
+Employee.prototype.print = function(){
+    console.log(`Id ${this.id} Salary ${this.salary} Dept ${this.dept}`);
+}
+Employee.prototype.__proto__ = Person.prototype;
+var ram = new Employee(1001, 9999,'IT', 'Ram', 2222);
+VM1700:2 Person cons call  Employee {}
+VM1700:15 Emp Cons Call  Employee {name: 'Ram', phone: 2222}
+VM1700:19 Emp Cons Call Ends  Employee {name: 'Ram', phone: 2222, id: 1001, salary: 9999, dept: 'IT'}
+{print: ƒ, getPhone: ƒ, constructor: ƒ}
+ram;
+Employee {name: 'Ram', phone: 2222, id: 1001, salary: 9999, dept: 'IT'}
+ram.print();
+VM1700:22 Id 1001 Salary 9999 Dept IT
+undefined
+function Person(name, phone){
+    console.log('Person cons call ' , this);
+    this.name = name;
+    this.phone = phone;
+    
+}
+Person.prototype.print = function(){
+console.log(`Name ${this.name} Phone ${this.phone}`);
+}
+Person.prototype.getPhone = function(){
+    return this.phone;
+}
+function Employee(id, salary, dept, name, phone){
+    Person.call(this, name, phone);
+    console.log('Emp Cons Call ', this);
+    this.id = id;
+    this.salary = salary;
+    this.dept= dept;
+    console.log('Emp Cons Call Ends ', this);
+}
+Employee.prototype.print = function(){
+    Person.prototype.print.call(this); // super.print();
+    console.log(`Id ${this.id} Salary ${this.salary} Dept ${this.dept}`);
+}
+Employee.prototype.__proto__ = Person.prototype;
+var ram = new Employee(1001, 9999,'IT', 'Ram', 2222);
+ram.print();
+VM2032:2 Person cons call  Employee {}
+VM2032:15 Emp Cons Call  Employee {name: 'Ram', phone: 2222}
+VM2032:19 Emp Cons Call Ends  Employee {name: 'Ram', phone: 2222, id: 1001, salary: 9999, dept: 'IT'}
+VM2032:8 Name Ram Phone 2222
+VM2032:23 Id 1001 Salary 9999 Dept IT
+undefined
