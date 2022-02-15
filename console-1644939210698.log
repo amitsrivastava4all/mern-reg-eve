@@ -1,0 +1,22 @@
+function* autoGen(){
+    var count = 0;
+    while(true){
+        count++;
+        yield count;
+    }
+}
+undefined
+var obj = autoGen();
+undefined
+obj;
+autoGen {<suspended>}[[GeneratorLocation]]: VM19:1[[Prototype]]: Generator[[Prototype]]: Generatorconstructor: GeneratorFunction {prototype: Generator, Symbol(Symbol.toStringTag): 'GeneratorFunction', constructor: ƒ}next: ƒ next()return: ƒ return()throw: ƒ throw()Symbol(Symbol.toStringTag): "Generator"[[Prototype]]: Object[[GeneratorState]]: "suspended"[[GeneratorFunction]]: ƒ* autoGen()[[GeneratorReceiver]]: Window[[Scopes]]: Scopes[2]
+obj.next();
+{value: 1, done: false}
+obj.next();
+{value: 2, done: false}
+obj.next();
+{value: 3, done: false}
+obj.next();
+{value: 4, done: false}
+obj.next();
+{value: 5, done: false}

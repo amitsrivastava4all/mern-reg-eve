@@ -1,0 +1,73 @@
+function* test2(start, end){
+    var count = 1;
+    for(let i = start; i<=end; i++, count++){
+        yield count;
+        
+    }
+    return count;
+}
+undefined
+var itr = test2(1,10);
+undefined
+itr.next();
+{value: 1, done: false}
+itr.next();
+{value: 2, done: false}
+itr.next();
+{value: 3, done: false}
+itr.next();
+{value: 4, done: false}
+itr.next();
+{value: 5, done: false}
+itr.next();
+{value: 6, done: false}
+itr.next();
+{value: 7, done: false}
+itr.next();
+{value: 8, done: false}
+itr.next();
+{value: 9, done: false}
+itr.next();
+{value: 10, done: false}
+itr.next();
+{value: 11, done: true}
+itr.next();
+{value: undefined, done: true}
+itr.next();
+{value: undefined, done: true}
+function *test3(){
+    yield 1;
+    yield ;
+    yield 3;
+}
+undefined
+var e = test3();
+undefined
+function* test3(){
+    yield 1;
+    yield ;
+    yield 3;
+}
+undefined
+var e = test3();
+undefined
+e.next().value;
+1
+e.next().value;
+undefined
+var e = test3();
+undefined
+e.next();
+{value: 1, done: false}
+e.next();
+{value: undefined, done: false}
+e.next();
+{value: 3, done: false}
+e.next();
+{value: undefined, done: true}
+e.next();
+{value: undefined, done: true}
+e.next();
+{value: undefined, done: true}
+e.next();
+{value: undefined, done: true}

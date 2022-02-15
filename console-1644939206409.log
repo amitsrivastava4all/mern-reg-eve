@@ -1,0 +1,19 @@
+function* show(){
+    yield 1;
+    yield 10;
+    yield 100;
+    yield 1000;
+}
+undefined
+var itr = show();
+undefined
+itr.next();
+{value: 1, done: false}
+itr.next();
+{value: 10, done: false}
+itr.next();
+{value: 100, done: false}
+itr.next();
+{value: 1000, done: false}
+itr.next();
+{value: undefined, done: true}

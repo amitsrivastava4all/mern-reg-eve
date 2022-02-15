@@ -1,0 +1,64 @@
+function show(){
+    (function(){
+    for(var i = 1; i<=3; i++){
+        console.log(i);
+    }
+    })();    
+    
+}
+undefined
+show();
+VM330:4 1
+VM330:4 2
+VM330:4 3
+undefined
+function show(){
+    console.log(i);
+    (function(){
+    for(var i = 1; i<=3; i++){
+        console.log(i);
+    }
+    })();    
+    console.log(i);
+}
+undefined
+show();
+VM459:2 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:2:17)
+    at <anonymous>:1:1
+show @ VM459:2
+(anonymous) @ VM482:1
+function show(){
+    //console.log(i);
+    (function(){
+    for(var i = 1; i<=3; i++){
+        console.log(i);
+    }
+    })();    
+    console.log(i);
+}
+undefined
+show();
+VM494:5 1
+VM494:5 2
+VM494:5 3
+VM494:8 Uncaught ReferenceError: i is not defined
+    at show (<anonymous>:8:17)
+    at <anonymous>:1:1
+show @ VM494:8
+(anonymous) @ VM517:1
+function show(){
+    //console.log(i);
+    (function(){
+    for(var i = 1; i<=3; i++){
+        console.log(i);
+    }
+    })();    
+    //console.log(i);
+}
+undefined
+show();
+VM528:5 1
+VM528:5 2
+VM528:5 3
+undefined

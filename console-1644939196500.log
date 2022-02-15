@@ -1,0 +1,18 @@
+class Task {
+  constructor(id, name, desc, date, url, isMarked = false) {
+    this.id = id;
+    this.name = name;
+    this.desc = desc;
+    this.date = date;
+    this.url = url;
+    this.isMarked = isMarked;
+  }
+  toggle() {
+    this.isMarked = !this.isMarked;
+  }
+}
+undefined
+Task.prototype
+{constructor: ƒ, toggle: ƒ}constructor: class Tasktoggle: ƒ toggle()[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+Task.prototype.__proto__;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}

@@ -1,0 +1,25 @@
+const counter = (function () {
+  var count = 0;
+    console.log("IIFE CALL ");
+  return () => ++count;
+  
+    
+})();
+VM224:3 IIFE CALL 
+undefined
+typeof counter;
+'function'
+counter;
+() => ++count
+console.dir(counter);
+VM365:1 anonymous()length: 0name: ""arguments: (...)caller: (...)[[FunctionLocation]]: VM224:4[[Prototype]]: ƒ ()[[Scopes]]: Scopes[3]0: Closurecount: 0[[Prototype]]: Object1: Script {counter: ƒ}2: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+counter();
+1
+counter();
+2
+counter();
+3
+console.dir(counter);
+VM414:1 anonymous()length: 0name: ""arguments: (...)caller: (...)[[FunctionLocation]]: VM224:4[[Prototype]]: ƒ ()[[Scopes]]: Scopes[3]0: Closure {count: 3}count: 3[[Prototype]]: Object1: Script {counter: ƒ}2: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
