@@ -1,0 +1,97 @@
+class A{ 
+constructor(){ 
+console.log("A Cons Call "); 
+
+} 
+show(){ 
+
+console.log("A Show "); 
+} 
+display(){ 
+console.log("A Disp"); 
+} 
+
+} 
+class B extends A{ 
+constructor(){ 
+super(); 
+console.log("B Cons Call "); 
+
+} 
+show(){ 
+console.log("I am B Show "); 
+} 
+} 
+var b = new B(); 
+
+VM19:3 A Cons Call 
+VM19:18 B Cons Call 
+undefined
+b.__proto__ == B.prototype;
+true
+b.__proto__.__proto__ == A.prototype;
+true
+b.__proto__.__proto__.__proto__ == Object.prototype;
+true
+b.__proto__.__proto__.__proto__.__proto__ ;
+null
+B.prototype;
+A {constructor: ƒ, show: ƒ}
+A.prototype;
+{constructor: ƒ, show: ƒ, display: ƒ}constructor: class Adisplay: ƒ display()show: ƒ show()[[Prototype]]: Object
+b.__proto__;
+A {constructor: ƒ, show: ƒ}
+b.__proto__ == B.prototype;
+true
+console.dir(b);
+VM525:1 B[[Prototype]]: Aconstructor: class Bshow: ƒ show()[[Prototype]]: Objectconstructor: class Adisplay: ƒ display()show: ƒ show()[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()length: 1name: "hasOwnProperty"arguments: (...)caller: (...)[[Prototype]]: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()[[FunctionLocation]]: ​[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[Scopes]]: Scopes[0][[Scopes]]: Scopes[0]isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: Aconstructor: class Bshow: ƒ show()[[Prototype]]: Objectget __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+undefined
+B.prototype
+A {constructor: ƒ, show: ƒ}
+B.prototype.__proto__
+{constructor: ƒ, show: ƒ, display: ƒ}
+B;
+class B extends A{ 
+constructor(){ 
+super(); 
+console.log("B Cons Call "); 
+
+} 
+show(){ 
+console.log("I am B Show "); 
+} 
+}
+typeof B;
+'function'
+B.prototype;
+A {constructor: ƒ, show: ƒ}
+B.__proto__
+class A{ 
+constructor(){ 
+console.log("A Cons Call "); 
+
+} 
+show(){ 
+
+console.log("A Show "); 
+} 
+display(){ 
+console.log("A Disp"); 
+} 
+
+}
+typeof B.__proto__
+'function'
+typeof B.prototype;
+'object'
+typeof B.prototype.__proto__;
+'object'
+A.prototype;
+{constructor: ƒ, show: ƒ, display: ƒ}
+typeof A.prototype;
+'object'
+B.prototype.__proto__;
+{constructor: ƒ, show: ƒ, display: ƒ}
+console.dir(B.prototype);
+VM922:1 Aconstructor: class Bshow: ƒ show()[[Prototype]]: Objectconstructor: class Adisplay: ƒ display()show: ƒ show()[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+undefined

@@ -1,0 +1,136 @@
+function doWork(){
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=10000; j++){}
+    }
+    return "I am Done ";
+}
+undefined
+console.log("Start "); // Blocking
+var result = doWork(); // Blocking
+console.log('Result is ',result); // Blocking
+console.log('End ');
+VM751:1 Start 
+VM751:3 Result is  I am Done 
+VM751:4 End 
+undefined
+function doWork(){
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=30000; j++){}
+    }
+    return "I am Done ";
+}
+undefined
+console.log("Start "); // Blocking
+var result = doWork(); // Blocking
+console.log('Result is ',result); // Blocking
+console.log('End ');
+VM768:1 Start 
+VM768:3 Result is  I am Done 
+VM768:4 End 
+undefined
+function doWork(){
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=60000; j++){}
+    }
+    return "I am Done ";
+}
+undefined
+console.log("Start "); // Blocking
+var result = doWork(); // Blocking
+console.log('Result is ',result); // Blocking
+console.log('End ');
+VM785:1 Start 
+VM785:3 Result is  I am Done 
+VM785:4 End 
+undefined
+function doWork(){
+    setTimeout(()=>{
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=60000; j++){}
+    }
+        return "I am Done ";
+    },7000);
+    
+}
+undefined
+console.log("Start "); // Blocking
+var result = doWork(); // Blocking --> Internally Non Blocking
+console.log('Result is ',result); // Blocking
+console.log('End ');
+VM1146:1 Start 
+VM1146:3 Result is  undefined
+VM1146:4 End 
+undefined
+function doWork(){
+    setTimeout(()=>{
+        console.log('Awake ');
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=60000; j++){}
+    }
+        console.log('All Loops End ');
+        return "I am Done ";
+    },7000);
+    
+}
+undefined
+console.log("Start "); // Blocking
+var result = doWork(); // Blocking --> Internally Non Blocking
+console.log('Result is ',result); // Blocking
+console.log('End ');
+VM1356:1 Start 
+VM1356:3 Result is  undefined
+VM1356:4 End 
+undefined
+VM1350:3 Awake 
+VM1350:7 All Loops End 
+console.log("Start "); // Blocking
+ doWork(getResult); // Blocking --> Internally Non Blocking
+console.log('Result is ',result); // Blocking
+console.log('End ');
+function getResult(result){
+    console.log('I am Call Back Fn Get Result ', result);
+}
+function doWork(callBackFn){
+    setTimeout(()=>{
+        console.log('Awake ');
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=60000; j++){}
+    }
+        console.log('All Loops End ');
+        //return "I am Done ";
+        callBackFn("I am Done ");
+    },7000);
+    
+}
+VM1836:1 Start 
+VM1836:3 Result is  undefined
+VM1836:4 End 
+undefined
+VM1836:10 Awake 
+VM1836:14 All Loops End 
+VM1836:6 I am Call Back Fn Get Result  I am Done 
+console.log("Start "); // Blocking
+ doWork(getResult); // Blocking --> Internally Non Blocking
+//console.log('Result is ',result); // Blocking
+console.log('End ');
+function getResult(result){
+    console.log('I am Call Back Fn Get Result ', result);
+}
+function doWork(callBackFn){
+    setTimeout(()=>{
+        console.log('Awake ');
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=60000; j++){}
+    }
+        console.log('All Loops End ');
+        //return "I am Done ";
+        callBackFn("I am Done ");
+    },7000);
+    
+}
+VM1845:1 Start 
+VM1845:4 End 
+undefined
+VM1845:10 Awake 
+VM1845:14 All Loops End 
+VM1845:6 I am Call Back Fn Get Result  I am Done 
