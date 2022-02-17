@@ -1,0 +1,105 @@
+function cube(num){
+    console.log("Cube Fn Start ", num);
+    var time = num>2?3000:7000;
+    var promise = new Promise((resolve, reject)=>{
+       // Async Code 
+        setTimeout(()=>{
+            if(num>10){
+                reject("Number is Bigger than 10 can't do cube " + num);
+            }
+            else{
+                resolve(num**3);
+            }
+        },time);
+    });
+    console.log("Cube Fn Ends ");
+    return promise;
+    
+}
+undefined
+function cube(num){
+    console.log("Cube Fn Start ", num);
+    var time = num>2?3000:7000;
+    var promise = new Promise((resolve, reject)=>{
+       // Async Code 
+        setTimeout(()=>{
+            if(num>100000000){
+                reject("Number is Bigger than 100000000 can't do cube " + num);
+            }
+            else{
+                resolve(num**3);
+            }
+        },time);
+    });
+    console.log("Cube Fn Ends ");
+    return promise;
+    
+}
+undefined
+function total(){
+    // await on statement level
+    var result= await cube(3); // Block
+    console.log('result1 ', result);
+    var result2 = await cube(result);
+    console.log('result2 ', result2);
+    var result3 = await cube(result2);
+    console.log('result3 ', result3);
+    var tot = result + result2 + result3;
+    return tot;
+}
+VM1005:3 Uncaught SyntaxError: await is only valid in async functions and the top level bodies of modules
+async function total(){
+    // await on statement level
+    var result= await cube(3); // Block
+    console.log('result1 ', result);
+    var result2 = await cube(result);
+    console.log('result2 ', result2);
+    var result3 = await cube(result2);
+    console.log('result3 ', result3);
+    var tot = result + result2 + result3;
+    return tot;
+}
+undefined
+var pr = total();
+pr.then(data=>console.log('Data is ', data)).catch(err=>console.log('err is ',err));
+VM59:2 Cube Fn Start  3
+VM59:15 Cube Fn Ends 
+Promise {<pending>}
+VM1024:4 result1  27
+VM59:2 Cube Fn Start  27
+VM59:15 Cube Fn Ends 
+VM1024:6 result2  19683
+VM59:2 Cube Fn Start  19683
+VM59:15 Cube Fn Ends 
+VM1024:8 result3  7625597484987
+VM1493:2 Data is  7625597504697
+async function total(){
+    // await on statement level
+    try{
+    var result= await cube(3); // Block
+    console.log('result1 ', result);
+    var result2 = await cube(result);
+    console.log('result2 ', result2);
+    var result3 = await cube(result2);
+    console.log('result3 ', result3);
+    var tot = result + result2 + result3;
+    }
+    catch(err){
+        return err;
+    }
+    return tot;
+}
+undefined
+var pr = total();
+pr.then(data=>console.log('Data is ', data)).catch(err=>console.log('err is ',err));
+VM59:2 Cube Fn Start  3
+VM59:15 Cube Fn Ends 
+Promise {<pending>}
+VM1574:5 result1  27
+VM59:2 Cube Fn Start  27
+VM59:15 Cube Fn Ends 
+VM1574:7 result2  19683
+VM59:2 Cube Fn Start  19683
+VM59:15 Cube Fn Ends 
+VM1574:9 result3  7625597484987
+VM1580:2 Data is  7625597504697

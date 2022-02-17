@@ -1,0 +1,93 @@
+function cube(num){
+    console.log("Cube Fn Start ", num);
+    var promise = new Promise((resolve, reject)=>{
+       // Async Code 
+        setTimeout(()=>resolve(num**3),7000);
+    });
+    console.log("Cube Fn Ends ");
+    return promise;
+    
+}
+undefined
+const pr = cube(3);
+console.log('Promise Rec ', promise);
+promise.then(data=>console.log('Data Rec ', data)).catch(err=>console.log('Error is ', err));
+console.log('******************************');
+VM826:2 Cube Fn Start  3
+VM826:7 Cube Fn Ends 
+VM1773:2 Uncaught ReferenceError: promise is not defined
+    at <anonymous>:2:29
+(anonymous) @ VM1773:2
+const pr = cube(3);
+console.log('Promise Rec ', promise);
+pr.then(data=>console.log('Data Rec ', data)).catch(err=>console.log('Error is ', err));
+console.log('******************************');
+VM826:2 Cube Fn Start  3
+VM826:7 Cube Fn Ends 
+VM1790:2 Uncaught ReferenceError: promise is not defined
+    at <anonymous>:2:29
+(anonymous) @ VM1790:2
+const pr = cube(3);
+console.log('Promise Rec ', pr);
+pr.then(data=>console.log('Data Rec ', data)).catch(err=>console.log('Error is ', err));
+console.log('******************************');
+VM826:2 Cube Fn Start  3
+VM826:7 Cube Fn Ends 
+VM1815:2 Promise Rec  Promise {<pending>}[[Prototype]]: Promise[[PromiseState]]: "pending"[[PromiseResult]]: undefined
+VM1815:4 ******************************
+undefined
+VM1815:3 Data Rec  27
+pr;
+Promise {<fulfilled>: 27}
+function cube(num){
+    console.log("Cube Fn Start ", num);
+    var promise = new Promise((resolve, reject)=>{
+       // Async Code 
+        setTimeout(()=>{
+            if(num>10){
+                reject("Number is Bigger than 10 can't do cube");
+            }
+            else{
+                resolve(num**3);
+            }
+        },7000);
+    });
+    console.log("Cube Fn Ends ");
+    return promise;
+    
+}
+undefined
+const pr = cube(30);
+console.log('Promise Rec ', pr);
+pr.then(data=>console.log('Data Rec ', data)).catch(err=>console.log('Error is ', err));
+console.log('******************************');
+VM2225:2 Cube Fn Start  30
+VM2225:14 Cube Fn Ends 
+VM2245:2 Promise Rec  Promise {<pending>}
+VM2245:4 ******************************
+undefined
+VM2245:3 Error is  Number is Bigger than 10 can't do cube
+const pr = cube(3);
+console.log('Promise Rec ', pr);
+pr.then(data=>console.log('Data Rec ', data)).catch(err=>console.log('Error is ', err));
+console.log('******************************');
+VM2225:2 Cube Fn Start  3
+VM2225:14 Cube Fn Ends 
+VM2257:2 Promise Rec  Promise {<pending>}
+VM2257:4 ******************************
+undefined
+VM2257:3 Data Rec  27
+pr;
+Promise {<fulfilled>: 27}
+const pr = cube(30);
+console.log('Promise Rec ', pr);
+pr.then(data=>console.log('Data Rec ', data)).catch(err=>console.log('Error is ', err));
+console.log('******************************');
+VM2225:2 Cube Fn Start  30
+VM2225:14 Cube Fn Ends 
+VM2287:2 Promise Rec  Promise {<pending>}
+VM2287:4 ******************************
+undefined
+VM2287:3 Error is  Number is Bigger than 10 can't do cube
+pr;
+Promise {<rejected>: "Number is Bigger than 10 can't do cube"}

@@ -1,0 +1,134 @@
+function cube(num){
+    console.log("Cube Fn Start ", num);
+    var promise = new Promise((resolve, reject)=>{
+       // Async Code 
+        setTimeout(()=>{
+            if(num>10){
+                reject("Number is Bigger than 10 can't do cube");
+            }
+            else{
+                resolve(num**3);
+            }
+        },7000);
+    });
+    console.log("Cube Fn Ends ");
+    return promise;
+    
+}
+undefined
+const single = Promise.all([cube(2), cube(3), cube(5)]);
+single.then(responses=>console.log('Data of All ',responses)).catch(err=>console.log('Error is ', err));
+VM51:2 Cube Fn Start  2
+VM51:14 Cube Fn Ends 
+VM51:2 Cube Fn Start  3
+VM51:14 Cube Fn Ends 
+VM51:2 Cube Fn Start  5
+VM51:14 Cube Fn Ends 
+Promise {<pending>}
+VM895:2 Data of All  (3) [8, 27, 125]
+const single = Promise.all([cube(2), cube(30), cube(5)]);
+single.then(responses=>console.log('Data of All ',responses)).catch(err=>console.log('Error is ', err));
+VM51:2 Cube Fn Start  2
+VM51:14 Cube Fn Ends 
+VM51:2 Cube Fn Start  30
+VM51:14 Cube Fn Ends 
+VM51:2 Cube Fn Start  5
+VM51:14 Cube Fn Ends 
+Promise {<pending>}
+VM910:2 Error is  Number is Bigger than 10 can't do cube
+const single = Promise.all([cube(2), cube(30), cube(50)]);
+single.then(responses=>console.log('Data of All ',responses)).catch(err=>console.log('Error is ', err));
+VM51:2 Cube Fn Start  2
+VM51:14 Cube Fn Ends 
+VM51:2 Cube Fn Start  30
+VM51:14 Cube Fn Ends 
+VM51:2 Cube Fn Start  50
+VM51:14 Cube Fn Ends 
+Promise {<pending>}
+VM926:2 Error is  Number is Bigger than 10 can't do cube
+function cube(num){
+    console.log("Cube Fn Start ", num);
+    var promise = new Promise((resolve, reject)=>{
+       // Async Code 
+        setTimeout(()=>{
+            if(num>10){
+                reject("Number is Bigger than 10 can't do cube " + num);
+            }
+            else{
+                resolve(num**3);
+            }
+        },7000);
+    });
+    console.log("Cube Fn Ends ");
+    return promise;
+    
+}
+undefined
+const single = Promise.all([cube(2), cube(30), cube(50)]);
+single.then(responses=>console.log('Data of All ',responses)).catch(err=>console.log('Error is ', err));
+VM991:2 Cube Fn Start  2
+VM991:14 Cube Fn Ends 
+VM991:2 Cube Fn Start  30
+VM991:14 Cube Fn Ends 
+VM991:2 Cube Fn Start  50
+VM991:14 Cube Fn Ends 
+Promise {<pending>}
+VM997:2 Error is  Number is Bigger than 10 can't do cube 30
+const single = Promise.allSettled([cube(2), cube(30), cube(50)]);
+single.then(responses=>console.log('Data of All ',responses)).catch(err=>console.log('Error is ', err));
+VM991:2 Cube Fn Start  2
+VM991:14 Cube Fn Ends 
+VM991:2 Cube Fn Start  30
+VM991:14 Cube Fn Ends 
+VM991:2 Cube Fn Start  50
+VM991:14 Cube Fn Ends 
+Promise {<pending>}
+VM1026:2 Data of All  (3) [{…}, {…}, {…}]0: {status: 'fulfilled', value: 8}1: {status: 'rejected', reason: "Number is Bigger than 10 can't do cube 30"}2: {status: 'rejected', reason: "Number is Bigger than 10 can't do cube 50"}length: 3[[Prototype]]: Array(0)
+const single = Promise.allSettled(cube(2), cube(30), cube(50));
+single.then(responses=>console.log('Data of All ',responses)).catch(err=>console.log('Error is ', err));
+VM991:2 Cube Fn Start  2
+VM991:14 Cube Fn Ends 
+VM991:2 Cube Fn Start  30
+VM991:14 Cube Fn Ends 
+VM991:2 Cube Fn Start  50
+VM991:14 Cube Fn Ends 
+VM1042:2 Error is  TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.allSettled (<anonymous>)
+    at <anonymous>:1:24
+Promise {<fulfilled>: undefined}
+VM991:7 Uncaught (in promise) Number is Bigger than 10 can't do cube 30
+(anonymous) @ VM991:7
+setTimeout (async)
+(anonymous) @ VM991:5
+cube @ VM991:3
+(anonymous) @ VM1042:1
+VM991:7 Uncaught (in promise) Number is Bigger than 10 can't do cube 50
+(anonymous) @ VM991:7
+setTimeout (async)
+(anonymous) @ VM991:5
+cube @ VM991:3
+(anonymous) @ VM1042:1
+const single = Promise.all(cube(2), cube(30), cube(50));
+single.then(responses=>console.log('Data of All ',responses)).catch(err=>console.log('Error is ', err));
+VM991:2 Cube Fn Start  2
+VM991:14 Cube Fn Ends 
+VM991:2 Cube Fn Start  30
+VM991:14 Cube Fn Ends 
+VM991:2 Cube Fn Start  50
+VM991:14 Cube Fn Ends 
+VM1058:2 Error is  TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at <anonymous>:1:24
+Promise {<fulfilled>: undefined}
+VM991:7 Uncaught (in promise) Number is Bigger than 10 can't do cube 30
+(anonymous) @ VM991:7
+setTimeout (async)
+(anonymous) @ VM991:5
+cube @ VM991:3
+(anonymous) @ VM1058:1
+VM991:7 Uncaught (in promise) Number is Bigger than 10 can't do cube 50
+(anonymous) @ VM991:7
+setTimeout (async)
+(anonymous) @ VM991:5
+cube @ VM991:3
+(anonymous) @ VM1058:1

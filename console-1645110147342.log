@@ -1,0 +1,63 @@
+function doWork(){
+    setTimeout(()=>{
+        console.log('Awake ');
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=60000; j++){}
+    }
+        console.log('All Loops End ');
+        return "I am Done ";
+    },7000);
+    
+}
+undefined
+console.log("Start "); // Blocking
+ doWork(getResult); // Blocking --> Internally Non Blocking
+console.log('Result is ',result); // Blocking
+console.log('End ');
+function getResult(result){
+    console.log('I am Call Back Fn Get Result ', result);
+}
+function doWork(callBackFn){
+    setTimeout(()=>{
+        console.log('Awake ');
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=60000; j++){}
+    }
+        console.log('All Loops End ');
+        //return "I am Done ";
+        callBackFn("I am Done ");
+    },7000);
+    
+}
+VM143:1 Start 
+VM143:3 Uncaught ReferenceError: result is not defined
+    at <anonymous>:3:26
+(anonymous) @ VM143:3
+VM143:10 Awake 
+VM143:14 All Loops End 
+VM143:6 I am Call Back Fn Get Result  I am Done 
+console.log("Start "); // Blocking
+ doWork(getResult); // Blocking --> Internally Non Blocking
+
+console.log('End ');
+function getResult(result){
+    console.log('I am Call Back Fn Get Result ', result);
+}
+function doWork(callBackFn){
+    setTimeout(()=>{
+        console.log('Awake ');
+    for(let i = 1;i<=100000; i++){
+        for(let j = 1; j<=60000; j++){}
+    }
+        console.log('All Loops End ');
+        //return "I am Done ";
+        callBackFn("I am Done ");
+    },7000);
+    
+}
+VM177:1 Start 
+VM177:4 End 
+undefined
+VM177:10 Awake 
+VM177:14 All Loops End 
+VM177:6 I am Call Back Fn Get Result  I am Done 

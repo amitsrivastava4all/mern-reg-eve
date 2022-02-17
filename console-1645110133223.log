@@ -1,0 +1,107 @@
+function cube(num){
+    console.log("Cube Fn Start ", num);
+    var promise = new Promise((resolve, reject)=>{
+       // Async Code 
+        setTimeout(()=>{
+            if(num>10){
+                reject("Number is Bigger than 10 can't do cube " + num);
+            }
+            else{
+                resolve(num**3);
+            }
+        },7000);
+    });
+    console.log("Cube Fn Ends ");
+    return promise;
+    
+}
+undefined
+const single = Promise.all([cube(2), cube(30), cube(50)]);
+single.then(responses=>console.log('Data of All ',responses)).catch(err=>console.log('Error is ', err));
+VM28:2 Cube Fn Start  2
+VM28:14 Cube Fn Ends 
+VM28:2 Cube Fn Start  30
+VM28:14 Cube Fn Ends 
+VM28:2 Cube Fn Start  50
+VM28:14 Cube Fn Ends 
+Promise {<pending>}
+VM43:2 Error is  Number is Bigger than 10 can't do cube 30
+const single = Promise.race([cube(2), cube(3), cube(5)]);
+single.then(response=>console.log('Data ',response)).catch(err=>console.log('Error is ', err));
+VM28:2 Cube Fn Start  2
+VM28:14 Cube Fn Ends 
+VM28:2 Cube Fn Start  3
+VM28:14 Cube Fn Ends 
+VM28:2 Cube Fn Start  5
+VM28:14 Cube Fn Ends 
+Promise {<pending>}
+VM111:2 Data  8
+function cube(num){
+    console.log("Cube Fn Start ", num);
+    var time = num>2?3000:7000;
+    var promise = new Promise((resolve, reject)=>{
+       // Async Code 
+        setTimeout(()=>{
+            if(num>10){
+                reject("Number is Bigger than 10 can't do cube " + num);
+            }
+            else{
+                resolve(num**3);
+            }
+        },time);
+    });
+    console.log("Cube Fn Ends ");
+    return promise;
+    
+}
+undefined
+const single = Promise.race([cube(2), cube(3), cube(5)]);
+single.then(response=>console.log('Data ',response)).catch(err=>console.log('Error is ', err));
+VM226:2 Cube Fn Start  2
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  3
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  5
+VM226:15 Cube Fn Ends 
+Promise {<pending>}
+VM232:2 Data  27
+const single = Promise.any([cube(2), cube(3), cube(5)]);
+single.then(response=>console.log('Data ',response)).catch(err=>console.log('Error is ', err));
+VM226:2 Cube Fn Start  2
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  3
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  5
+VM226:15 Cube Fn Ends 
+Promise {<pending>}
+VM249:2 Data  27
+const single = Promise.any([cube(20), cube(30), cube(5)]);
+single.then(response=>console.log('Data ',response)).catch(err=>console.log('Error is ', err));
+VM226:2 Cube Fn Start  20
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  30
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  5
+VM226:15 Cube Fn Ends 
+Promise {<pending>}
+VM272:2 Data  125
+const single = Promise.race([cube(2), cube(30), cube(5)]);
+single.then(response=>console.log('Data ',response)).catch(err=>console.log('Error is ', err));
+VM226:2 Cube Fn Start  2
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  30
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  5
+VM226:15 Cube Fn Ends 
+Promise {<pending>}
+VM289:2 Error is  Number is Bigger than 10 can't do cube 30
+const single = Promise.any([cube(20), cube(30), cube(5)]);
+single.then(response=>console.log('Data ',response)).catch(err=>console.log('Error is ', err));
+VM226:2 Cube Fn Start  20
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  30
+VM226:15 Cube Fn Ends 
+VM226:2 Cube Fn Start  5
+VM226:15 Cube Fn Ends 
+Promise {<pending>}
+VM296:2 Data  125
