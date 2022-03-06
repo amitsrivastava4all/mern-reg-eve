@@ -1,0 +1,7 @@
+npx create-react-app firstapp
+cd firstapp
+npm start
+
+
+If u want to change the port number
+PORT=9999 npm start
